@@ -1,0 +1,127 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/font/Nunito-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/font/Nunito-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/font/Nunito-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/font/Nunito-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/font/Nunito-ExtraBold.ttf");
+  font-weight: 800;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:#1C1B15;
+}
+
+code {
+  font-family: "Nunito" !important;
+}
+
+ul {
+  list-style:none;
+}
+
+a{
+  text-decoration:none;
+  cursor:pointer;
+}
+.invalid {
+  color:#de0000;
+}
+
+.ant-card {
+  background:#33322C!important;
+  border: 1px solid #33322C;
+}
+.ant-card-body {
+  padding:8px 0px !important;
+  background:#33322C!important;
+}
+
+.hoverable-card {
+  &:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+
+}
+
+.ant-tabs-tab {
+  .ant-tabs-tab-btn {
+    color:#fff;
+    font-size:16px;
+  }
+
+}
+  .ant-tabs-tab-active {
+    .ant-tabs-tab-btn {
+      color:#DC1814!important;
+      font-weight:500;
+    }
+  }
+
+  .ul-info {
+    list-style: disc;
+    padding-left:20px;
+  }
+
+  .ant-collapse  {
+        border: 0px;
+      .ant-collapse-item {
+        border: 0px;
+        margin-bottom:24px;
+        .ant-collapse-header {
+          background:#ffffff1a;
+          border-radius:8px!important;
+          color:#fff!important;
+        }
+        .ant-collapse-content-box {
+          background:#33322C;
+        }
+        .ant-collapse-content-active {
+          border:0px;
+           background:#33322C;
+        }
+      }
+  }
+.container{
+  width: 100%;
+  max-width: 1600px;
+  margin:0px auto;
+  @media(max-width:1600px){
+    max-width: 1450px;
+  }
+  @media(max-width:1500px){
+    max-width: 1366px;
+  }
+  @media(max-width:1366px){
+    max-width: 1200px;
+  }
+}
