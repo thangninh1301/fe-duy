@@ -10,7 +10,10 @@ import ProductUser from "../container/User/Product/index";
 import ProductDetail from "../container/User/ProductDetail/index";
 import Card from "../container/User/Card/index";
 import Guide from "../container/User/Guide/index";
-import News from "../container/User/News/index"
+import News from "../container/User/News/index";
+import Order from "../container/Admin/Order/index";
+import OrderUser from "../container/User/Order/index";
+import OrderDetail from "../container/User/OrderDetail/index";
 
 export const router = [
   {
@@ -77,6 +80,24 @@ export const router = [
     path: "/news",
     element: <News />,
     permissions: false,
+    exact: true,
+  },
+  {
+    path: "/admin/order",
+    element: <Order />,
+    permissions: true,
+    exact: true,
+  },
+  {
+    path: "/order",
+    element: <OrderUser />,
+    permissions: true,
+    exact: true,
+  },
+  {
+    path: "/order/:id",
+    element: <OrderDetail />,
+    permissions: true,
     exact: true,
   },
   {

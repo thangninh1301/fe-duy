@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Carousel, Skeleton, Card } from "antd";
 import { useNavigate } from "react-router-dom";
 
-import slider1 from "../../../assets/images/silder/silder1.png";
-import slider2 from "../../../assets/images/silder/slider2.png";
-import slider3 from "../../../assets/images/silder/silde4.png";
+import slider1 from "../../../assets/images/silder/slider10.png";
+import slider2 from "../../../assets/images/silder/slider11.png";
+import slider3 from "../../../assets/images/silder/slider12.png";
+import slider4 from "../../../assets/images/silder/slider14.png";
 import productImage from "../../../assets/images/productImage.png";
 import vector from "../../../assets/images/silder/Vector.svg";
 import vector1 from "../../../assets/images/silder/Vector-1.svg";
@@ -45,29 +46,39 @@ const HomePage = ({ type = 1 }) => {
   }, [dispatch]);
   return (
     <LauoutDefault type={type}>
+      <div className="container !tw-my-[24px]">
       <Carousel autoplay autoplaySpeed={5000} speed={1000}>
-        <div>
+        <div className="!tw-rounded-[24px] !tw-w-full">
           <img
-            className="tw-w-full !tw-h-[calc(100vh_-_146px)]"
+            className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
             alt="silder1"
             src={slider1}
           />
         </div>
-        <div>
+        <div className="!tw-rounded-[24px] !tw-w-full">
           <img
-            className="tw-w-full !tw-h-[calc(100vh_-_146px)]"
+            className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
             alt="silder2"
             src={slider2}
           />
         </div>
-        <div>
+        <div className="!tw-rounded-[24px] !tw-w-full">
           <img
-            className="tw-w-full !tw-h-[calc(100vh_-_146px)]"
+            className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
             alt="silder4"
             src={slider3}
           />
         </div>
+        <div className="!tw-rounded-[24px] !tw-w-full">
+          <img
+            className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
+            alt="silder4"
+            src={slider4}
+          />
+        </div>
       </Carousel>
+      </div>
+    
       <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[275px]">
         <div className="tw-relative">
           <img

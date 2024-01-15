@@ -7,6 +7,8 @@ import { DeleteOutlined,ExclamationCircleOutlined } from "@ant-design/icons";
 import productImage from "../../../assets/images/productImage.png";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { message } from "antd";
+
 const { TextArea } = Input;
 const Card = () => {
   const dispatch = useDispatch();
@@ -101,8 +103,16 @@ const Card = () => {
     [idSlected, dispatch]
   );
 
-  const handleSubmitBuy = () => {
-      console.log('adasd')
+  const handleSubmitBuy = (values) => {
+      if(selectedRowKeys?.length>0){
+        dispatch({
+          type:  "ORDER_PRODUCT",
+          payload: {...values,cart_ids:[...selectedRowKeys],} ,
+        });
+        
+      }else {
+        message.error('Bạn chưa chọn đơn đặt hàng');
+      }
     };
   
 
@@ -116,9 +126,6 @@ const Card = () => {
       <div className=" tw-p-6 container ">
         <div className="tw-flex tw-items-center tw-justify-between tw-my-6">
           <div className="tw-text-[20px] tw-font-[700]">Giỏ hàng</div>
-          <div className="tw-flex tw-items-center tw-justify-end">
-            <Button>Xoá đơn</Button>
-          </div>
         </div>
         {listCard?.length > 0 ? (
           <div>
@@ -139,7 +146,7 @@ const Card = () => {
             enableReinitialize
             onSubmit={handleSubmitBuy}
           >
-            {({ values, setFieldValue, handleSubmit  }) => {
+            {({ values, setFieldValue  }) => {
               return (
                 <div className="tw-bg-white tw-rounded-[10px] tw-p-6 tw-flex tw-items-center  tw-flex-col">
                   <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
@@ -147,9 +154,9 @@ const Card = () => {
                       <div className="tw-mb-1">Địa chỉ nhận hàng</div>
                       <TextArea
                         name="address"
-                        value={values.name || ""}
-                        onChange={(event) => {
-                          setFieldValue("address", event.target.value);
+                        value={values.address}
+                        onChange={(e) => {
+                          setFieldValue("address", e.target.value);
                         }}
                         rows={5}
                         placeholder="Nhập địa chỉ nhận hàng"
@@ -163,7 +170,7 @@ const Card = () => {
                   </div>
                   <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-mb-4">
                     <Button
-                      onClick={() => handleSubmit()}
+                      onClick={() => handleSubmitBuy(values)}
                       className="tw-ml-3"
                       type="primary"
                     >

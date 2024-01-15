@@ -45,4 +45,22 @@ export const ConstantAPI = {
       method: "POST",
     }
   },
+  order: {
+    GET_ALL: {
+      url: "/api/v1/order",
+      method: "GET",
+    },
+    GET_PRODUCT_BY_ID: {
+      url: "/api/v1/order",
+      method: "GET",
+    },
+    CREATE: {
+      url: "/api/v1/order",
+      method: "POST",
+    },
+    DELETE:{
+      url: "/api/v1/order",
+      method: "POST",
+    }
+  },
 };

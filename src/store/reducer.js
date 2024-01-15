@@ -4,6 +4,8 @@ const initialState = {
   listProductUser: [],
   listCard: [],
   ProductDetail: {},
+  listOrder:[],
+  orderDetail:{},
   Loading: true,
 };
 
@@ -19,6 +21,10 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, ProductDetail: action.payload };
     case "SET_CARD":
       return { ...state, listCard: action.payload };
+    case "SET_ORDER_ADMIN":
+      return { ...state, listOrder: action.payload };
+    case "SET_ORDER_DETAIL":
+      return { ...state, orderDetail: action.payload };
     case "SET_LOADING":
       return { ...state, Loading: action.payload };
     default:

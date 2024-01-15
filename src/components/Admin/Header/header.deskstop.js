@@ -1,12 +1,11 @@
 import React, { useMemo } from "react";
 import HeaderWrapper from "./header.styles";
 import logo from "../../../assets/images/sovietmodel.svg";
-import { Link } from "react-router-dom";
 import { Dropdown, Space, Avatar } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
 import { TOKEN_ADMIN } from "../../../constants/index";
 import { getTokenAdmin } from "../../../utils/index";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate,Link } from "react-router-dom"; 
 const Header = () => {
 
 
@@ -82,10 +81,14 @@ const Header = () => {
           </Link>
         </li>
         <li className="tw-flex tw-items-center tw-justify-center tw-px-4 2xl:tw-px-[36px] tw-border-0 tw-border-r-[1px] tw-border-solid tw-border-[#fff] tw-py-1 tw-text-[#fff] tw-cursor-pointer">
-          Sản phẩm
+        <Link to="/admin/product" className="tw-text-white tw-text-[16px]">
+            Sản phẩm
+          </Link>
         </li>
         <li className="tw-flex tw-items-center tw-justify-center tw-px-4 2xl:tw-px-[36px] tw-border-0 tw-border-r-[1px] tw-border-solid tw-border-[#fff] tw-py-1 tw-text-[#fff] tw-cursor-pointer">
-          Đơn hàng
+        <Link to="/admin/order" className="tw-text-white tw-text-[16px]">
+            Đơn hàng
+          </Link>
         </li>
       </ul>
       </div>
