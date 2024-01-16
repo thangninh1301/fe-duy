@@ -32,7 +32,7 @@ const OrderDetail = () => {
         acqId: "970418",
         addInfo: orderDetail?.order.payment_code || "",
         amount:caculatorMoney(orderDetail?.order_items) || "0",
-        template: "compact"
+        template: "compact2"
      } });
     }
    // eslint-disable-next-line
