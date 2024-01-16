@@ -10,7 +10,8 @@ import {
   setCard,
   fetchCard,
   setDataOrder,
-  setDataOrderDetail
+  setDataOrderDetail,
+  setQRCode
 } from "./action";
 import { setToken, setTokenAdmin } from "../utils/index";
 import {configService} from "../services/configRequest"
@@ -261,6 +262,21 @@ function* FetchOderDetail(data) {
   }
 }
 
+function* GenQRCode(data) {
+  try {
+    const response = yield call(() =>
+    configService.post('https://api.vietqr.io/v2/generate', {...data?.payload}, null)
+    );
+
+    yield put(setQRCode(response?.data));
+
+
+    yield put(setLoading(false));
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
 function* rootSaga() {
   yield takeEvery("FETCH_DATA", fetchDataSaga);
   yield takeEvery("LOGIN_USER", LoginUser);
@@ -276,6 +292,7 @@ function* rootSaga() {
   yield takeEvery("ORDER_PRODUCT", OrderProduct);
   yield takeEvery("FETCH_ORDER_ADMIN", FetchOderAdmin);
   yield takeEvery("FETCH_ORDER_DETAIL", FetchOderDetail);
+  yield takeEvery("GEN_QRCODE", GenQRCode);
 }
 
 export default rootSaga;

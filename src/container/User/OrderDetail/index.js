@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import LauoutDefault from "../../../components/User/LauoutDefault";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import qrcode from "../../../assets/images/qrCode.jpg"
+import {QRCode } from "antd";
 
 const OrderDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const orderDetail = useSelector((state) => state.orderDetail);
-
+  const QrCode = useSelector((state) => state.QrCode);
   const caculatorMoney = (data) => {
     let total = 0;
     data.forEach((i) => {
@@ -18,9 +18,25 @@ const OrderDetail = () => {
     return total;
   };
 
+ 
+
   useEffect(() => {
     dispatch({ type: "FETCH_ORDER_DETAIL", payload: { id: Number(id) } });
   }, [dispatch, id]);
+
+  useEffect(() => {
+    if(orderDetail?.order_items?.length>0){
+      dispatch({ type: "GEN_QRCODE", payload: { 
+        accountNo: "21110001606693",
+        accountName: "NGUYEN LE DUY",
+        acqId: "970418",
+        addInfo: "test",
+        amount:caculatorMoney(orderDetail?.order_items) || "0",
+        template: "compact"
+     } });
+    }
+   // eslint-disable-next-line
+  }, [orderDetail]);
 
   return (
     <LauoutDefault type={2}>
@@ -59,12 +75,12 @@ const OrderDetail = () => {
               <div></div>
             </div>
             <div className="tw-w-[400px] tw-flex tw-justify-center">
-                <div className="tw-w[300px]">
-                    <div className="tw-text-center">Quét mã thanh toán Đơn hàng</div>
-                    <img alt="qrcode" className="tw-w-full" src={qrcode}/>
-                    <div className="tw-text-center">Ngân hàng: BIDV</div>
-                    <div className="tw-text-center">Chủ tài khoản: NGUYEN LE DUY</div>
-                    <div className="tw-text-center">Số tài khoản: 21110001606693</div>
+                <div className="tw-w[300px] tw-flex tw-justify-center tw-flex-col tw-items-center">
+                    <div className="tw-text-center tw-mb-2">Quét mã thanh toán Đơn hàng</div>
+                    <QRCode value={QrCode?.qrCode} />
+                    <div className="tw-text-center tw-my-2">Ngân hàng: BIDV</div>
+                    <div className="tw-text-center tw-mb-2">Chủ tài khoản: NGUYEN LE DUY</div>
+                    <div className="tw-text-center tw-mb-2">Số tài khoản: 21110001606693</div>
                     <div className="tw-text-center">Chi nhánh: Hà nội</div>
                 </div>
             </div>

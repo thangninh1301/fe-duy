@@ -44,3 +44,10 @@ export const SORT = [
   { value: "3", label: "Từ z -> a" },
 ];
 
+export const PRICE_LIST = [
+  { value: "1", label: "Dưới 500.000 vnd" },
+  { value: "2", label: "Từ 500.000 đến 1.000.000 vnd" },
+  { value: "3", label: "Từ 1.000.000 đến 1.500.000 vnd" },
+  { value: "4", label: "Từ 1.500.000 đến 2.000.000 vnd" },
+];
+

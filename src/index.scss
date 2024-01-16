@@ -125,3 +125,19 @@ a{
     max-width: 1200px;
   }
 }
+
+.modal-filter{
+  color:#FFF;
+  .ant-modal-content {
+    background-color: #33322C!important;
+  }
+  .ant-modal-header {
+    background-color: #33322C1a!important;
+    .ant-modal-title {
+    color:#FFF!important;
+    }
+  }
+  .ant-modal-close {
+    color:#FFF!important;
+  }
+}

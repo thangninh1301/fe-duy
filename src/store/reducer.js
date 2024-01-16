@@ -6,6 +6,7 @@ const initialState = {
   ProductDetail: {},
   listOrder:[],
   orderDetail:{},
+  QrCode:{},
   Loading: true,
 };
 
@@ -25,6 +26,8 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, listOrder: action.payload };
     case "SET_ORDER_DETAIL":
       return { ...state, orderDetail: action.payload };
+      case "SET_QRCODE":
+        return { ...state, QrCode: action.payload };
     case "SET_LOADING":
       return { ...state, Loading: action.payload };
     default:

@@ -91,3 +91,8 @@ export const setDataOrderDetail = (data) => ({
   type: "SET_ORDER_DETAIL",
   payload: data,
 });
+
+export const setQRCode = (data) => ({
+  type: "SET_QRCODE",
+  payload: data,
+});
