@@ -30,7 +30,7 @@ const OrderDetail = () => {
         accountNo: "21110001606693",
         accountName: "NGUYEN LE DUY",
         acqId: "970418",
-        addInfo: "test",
+        addInfo: orderDetail?.order.payment_code || "",
         amount:caculatorMoney(orderDetail?.order_items) || "0",
         template: "compact"
      } });
