@@ -40,10 +40,10 @@ export const ConstantAPI = {
       url: "/api/v1/cart",
       method: "POST",
     },
-    DELETE:{
+    DELETE: {
       url: "/api/v1/cart",
       method: "POST",
-    }
+    },
   },
   order: {
     GET_ALL: {
@@ -58,9 +58,15 @@ export const ConstantAPI = {
       url: "/api/v1/order",
       method: "POST",
     },
-    DELETE:{
+    DELETE: {
       url: "/api/v1/order",
       method: "POST",
-    }
+    },
+  },
+  upload: {
+    UPLOAD_IMAGES: {
+      url: "/api/v1/picture",
+      method: "POST",
+    },
   },
 };

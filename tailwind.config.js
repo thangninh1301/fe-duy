@@ -905,11 +905,6 @@ module.exports = {
       none: "none",
       ...theme("colors"),
     }),
-    strokeWidth: {
-      0: "0",
-      1: "1",
-      2: "2",
-    },
     supports: {},
     data: {},
     textColor: ({ theme }) => theme("colors"),

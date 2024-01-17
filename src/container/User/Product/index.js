@@ -11,7 +11,7 @@ import {
   Radio,
   Space,
   Checkbox,
-  Button
+  Button,
 } from "antd";
 import productImage from "../../../assets/images/productImage.png";
 import {
@@ -22,50 +22,83 @@ import {
   TYPE_LIST,
   PRICE_LIST,
 } from "../../../constants/common";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Formik } from "formik";
 const ProductUser = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // let location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const Loading = useSelector((state) => state.Loading);
   const listProductUser = useSelector((state) => state.listProductUser);
   const [sort, setSort] = useState("1");
-  // let searchParams = new URLSearchParams(location.search);
-  
+
   const [openModalFilter, setOpenModalFilter] = useState(false);
   const viewDetail = (id) => {
     navigate(`/product/${id}`);
   };
 
   const initialValues = {
-    size: [],
-    brand: "",
-    country: [],
-    type: [],
-    price_each: [],
+    size: searchParams.get("size")?.split(",") || [],
+    brand: searchParams.get("brand") || "",
+    country: searchParams.get("country")?.split(",") || [],
+    type: searchParams.get("type")?.split(",") || [],
+    price_high: searchParams.get("price_high")?.split(",") || [],
   };
 
   const handleCancel = () => {
     setOpenModalFilter(false);
   };
+  const removeNullObjects = (obj) => {
+    return Object.entries(obj).reduce(
+      (a, [k, v]) => (v === null || v === "" ? a : ((a[k] = v), a)),
+      {}
+    );
+  };
 
   const handleSubmit = useCallback(
     (values) => {
-      dispatch({
-        type: "CREATE_PRODUCT",
-        payload: values,
-      });
+      const queryString = new URLSearchParams(
+        removeNullObjects({
+          ...values,
+          size: values?.size.join(","),
+          country: values?.country.join(","),
+          type: values?.type.join(","),
+          price_high: values?.price_high.join(","),
+        })
+      ).toString();
+      navigate(`/product?${queryString}`, { replace: true });
       setOpenModalFilter(false);
     },
     // eslint-disable-next-line
     [initialValues, dispatch]
   );
 
+  const resetForm = useCallback(
+    (values) => {
+      const queryString = new URLSearchParams(
+        removeNullObjects({
+          branch: "",
+          size: null,
+          country: null,
+          type: null,
+          price_high: null,
+        })
+      ).toString();
+      navigate(`/product?${queryString}`, { replace: true });
+    },
+    // eslint-disable-next-line
+    [dispatch]
+  );
+
   useEffect(() => {
-    dispatch({ type: "GET_ALL_PRODUCT_USER" });
-     // eslint-disable-next-line
-  }, [dispatch]);
+    dispatch({
+      type: "GET_ALL_PRODUCT_USER",
+      payload: {
+        ...removeNullObjects(initialValues),
+      },
+    });
+    // eslint-disable-next-line
+  }, [dispatch, searchParams]);
 
   return (
     <LauoutDefault>
@@ -97,25 +130,57 @@ const ProductUser = () => {
               />
             </div>
           </div>
-          <div className="tw-flex tw-items-center tw-mb-6">
+          <div className="tw-flex tw-items-center tw-mb-6 tw-cursor-pointer">
             <div className="tw-text-white">Lọc sản phẩm theo :</div>
+            {!!initialValues?.brand && (
+              <div
+                onClick={() => setOpenModalFilter(true)}
+                className="tw-flex tw-items-center tw-ml-3"
+              >
+                <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
+                  Hãng: {initialValues?.brand}
+                </div>
+              </div>
+            )}
+            {!!initialValues?.type?.length > 0 && (
+              <div
+                onClick={() => setOpenModalFilter(true)}
+                className="tw-flex tw-items-center tw-ml-3"
+              >
+                <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
+                  Loại: {initialValues?.type}
+                </div>
+              </div>
+            )}
+
+            {!!initialValues?.size?.length > 0 && (
+              <div
+                onClick={() => setOpenModalFilter(true)}
+                className="tw-flex tw-items-center tw-ml-3"
+              >
+                <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
+                  Kích thước: {initialValues?.size}
+                </div>
+              </div>
+            )}
+            {!!initialValues?.country?.length > 0 && (
+              <div
+                onClick={() => setOpenModalFilter(true)}
+                className="tw-flex tw-items-center tw-ml-3"
+              >
+                <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
+                  Đất nước: {initialValues?.country}
+                </div>
+              </div>
+            )}
             <div
-              className="tw-flex tw-items-center tw-ml-3"
+              className="tw-mx-4 tw-text-white tw-font-[500]"
               onClick={() => setOpenModalFilter(true)}
             >
-              <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
-                Hãng: TRUMPETER
-              </div>
+              Chọn bộ lọc
             </div>
-            <div className="tw-flex tw-items-center tw-ml-3">
-              <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
-                Tất cả
-              </div>
-            </div>
-            <div className="tw-flex tw-items-center tw-ml-3">
-              <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
-                1/35
-              </div>
+            <div onClick={() => resetForm()} className="tw-text-[#DC1914]">
+              Xoá bộ lọc
             </div>
           </div>
           {listProductUser?.length > 0 ? (
@@ -130,9 +195,12 @@ const ProductUser = () => {
                     minWidth: "200px",
                     marginRight: "24px",
                     padding: "8px",
+                    marginBottom: "24px",
                   }}
                   className="hoverable-card"
-                  cover={<img alt="example" src={productImage} />}
+                  cover={
+                    <img alt="example" src={i?.image_url || productImage} />
+                  }
                   onClick={() => viewDetail(i.id)}
                 >
                   <div>
@@ -141,7 +209,7 @@ const ProductUser = () => {
                     </div>
                     <div className="tw-flex tw-items-center tw-justify-between">
                       <div className="tw-text-[#FFC43F] tw-text-[18px] tw-font-[700] tw-leading-[36px]">
-                        {i.price_each}VND
+                        {i.price_high}VND
                       </div>
                       <div className="tw-text-white ">
                         SL:<span>{i.product_quantity}</span>
@@ -226,22 +294,22 @@ const ProductUser = () => {
                         <path
                           d="M4 7C4 6.06812 4 5.60218 4.15224 5.23463C4.35523 4.74458 4.74458 4.35523 5.23463 4.15224C5.60218 4 6.06812 4 7 4C7.93188 4 8.39782 4 8.76537 4.15224C9.25542 4.35523 9.64477 4.74458 9.84776 5.23463C10 5.60218 10 6.06812 10 7C10 7.93188 10 8.39782 9.84776 8.76537C9.64477 9.25542 9.25542 9.64477 8.76537 9.84776C8.39782 10 7.93188 10 7 10C6.06812 10 5.60218 10 5.23463 9.84776C4.74458 9.64477 4.35523 9.25542 4.15224 8.76537C4 8.39782 4 7.93188 4 7Z"
                           stroke="#FAFAFA"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                         />
                         <path
                           d="M14 7C14 6.06812 14 5.60218 14.1522 5.23463C14.3552 4.74458 14.7446 4.35523 15.2346 4.15224C15.6022 4 16.0681 4 17 4C17.9319 4 18.3978 4 18.7654 4.15224C19.2554 4.35523 19.6448 4.74458 19.8478 5.23463C20 5.60218 20 6.06812 20 7C20 7.93188 20 8.39782 19.8478 8.76537C19.6448 9.25542 19.2554 9.64477 18.7654 9.84776C18.3978 10 17.9319 10 17 10C16.0681 10 15.6022 10 15.2346 9.84776C14.7446 9.64477 14.3552 9.25542 14.1522 8.76537C14 8.39782 14 7.93188 14 7Z"
                           stroke="#FAFAFA"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                         />
                         <path
                           d="M4 17C4 16.0681 4 15.6022 4.15224 15.2346C4.35523 14.7446 4.74458 14.3552 5.23463 14.1522C5.60218 14 6.06812 14 7 14C7.93188 14 8.39782 14 8.76537 14.1522C9.25542 14.3552 9.64477 14.7446 9.84776 15.2346C10 15.6022 10 16.0681 10 17C10 17.9319 10 18.3978 9.84776 18.7654C9.64477 19.2554 9.25542 19.6448 8.76537 19.8478C8.39782 20 7.93188 20 7 20C6.06812 20 5.60218 20 5.23463 19.8478C4.74458 19.6448 4.35523 19.2554 4.15224 18.7654C4 18.3978 4 17.9319 4 17Z"
                           stroke="#FAFAFA"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                         />
                         <path
                           d="M14 17C14 16.0681 14 15.6022 14.1522 15.2346C14.3552 14.7446 14.7446 14.3552 15.2346 14.1522C15.6022 14 16.0681 14 17 14C17.9319 14 18.3978 14 18.7654 14.1522C19.2554 14.3552 19.6448 14.7446 19.8478 15.2346C20 15.6022 20 16.0681 20 17C20 17.9319 20 18.3978 19.8478 18.7654C19.6448 19.2554 19.2554 19.6448 18.7654 19.8478C18.3978 20 17.9319 20 17 20C16.0681 20 15.6022 20 15.2346 19.8478C14.7446 19.6448 14.3552 19.2554 14.1522 18.7654C14 18.3978 14 17.9319 14 17Z"
                           stroke="#FAFAFA"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                         />
                       </svg>
 
@@ -261,7 +329,9 @@ const ProductUser = () => {
                               key={i.value}
                               className="tw-flex tw-w-full tw-justify-between"
                             >
-                              <div className="tw-text-[#ffffffcc]">{i.label}</div>
+                              <div className="tw-text-[#ffffffcc]">
+                                {i.label}
+                              </div>
                               <Checkbox name="type" value={i.value}></Checkbox>
                             </div>
                           );
@@ -299,7 +369,9 @@ const ProductUser = () => {
                               key={i.value}
                               className="tw-flex tw-w-full tw-justify-between"
                             >
-                              <div className="tw-text-[#ffffffcc]">{i.label}</div>
+                              <div className="tw-text-[#ffffffcc]">
+                                {i.label}
+                              </div>
                               <Checkbox name="size" value={i.value}></Checkbox>
                             </div>
                           );
@@ -331,7 +403,7 @@ const ProductUser = () => {
 
                     <Checkbox.Group
                       style={{ width: "100%" }}
-                      onChange={(e) => setFieldValue("price_each", e)}
+                      onChange={(e) => setFieldValue("price_high", e)}
                     >
                       <Space className="tw-px-3 tw-w-full" direction="vertical">
                         {PRICE_LIST.map((i) => {
@@ -340,8 +412,13 @@ const ProductUser = () => {
                               key={i.value}
                               className="tw-flex tw-w-full tw-justify-between"
                             >
-                              <div className="tw-text-[#ffffffcc]">{i.label}</div>
-                              <Checkbox name="price_each" value={i.value}></Checkbox>
+                              <div className="tw-text-[#ffffffcc]">
+                                {i.label}
+                              </div>
+                              <Checkbox
+                                name="price_high"
+                                value={i.value}
+                              ></Checkbox>
                             </div>
                           );
                         })}
@@ -378,8 +455,13 @@ const ProductUser = () => {
                               key={i.value}
                               className="tw-flex tw-w-full tw-justify-between"
                             >
-                              <div className="tw-text-[#ffffffcc]">{i.label}</div>
-                              <Checkbox name="country" value={i.value}></Checkbox>
+                              <div className="tw-text-[#ffffffcc]">
+                                {i.label}
+                              </div>
+                              <Checkbox
+                                name="country"
+                                value={i.value}
+                              ></Checkbox>
                             </div>
                           );
                         })}
@@ -388,17 +470,17 @@ const ProductUser = () => {
                   </div>
                 </div>
                 <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-mb-4">
-                    <Button type="default" onClick={handleCancel}>
-                      Huỷ bỏ
-                    </Button>
-                    <Button
-                      onClick={() => handleSubmit(values)}
-                      className="tw-ml-3"
-                      type="primary"
-                    >
-                      Lọc
-                    </Button>
-                  </div>
+                  <Button type="default" onClick={handleCancel}>
+                    Huỷ bỏ
+                  </Button>
+                  <Button
+                    onClick={() => handleSubmit(values)}
+                    className="tw-ml-3"
+                    type="primary"
+                  >
+                    Lọc
+                  </Button>
+                </div>
               </div>
             );
           }}

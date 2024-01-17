@@ -11,19 +11,19 @@ import {
   fetchCard,
   setDataOrder,
   setDataOrderDetail,
-  setQRCode
+  setQRCode,
 } from "./action";
 import { setToken, setTokenAdmin } from "../utils/index";
-import {configService} from "../services/configRequest"
+import { configService } from "../services/configRequest";
 import { ConstantAPI } from "../services/ConstantAPI";
-import {requestNoAuth} from "../services/requestNoAuth";
-import {adminRequest} from "../services/adminRequest";
+import { requestNoAuth } from "../services/requestNoAuth";
+import { adminRequest } from "../services/adminRequest";
 import { message } from "antd";
 
 function* fetchDataSaga() {
   try {
     const data = yield call(() =>
-      configService.callApi(ConstantAPI.auth.LOGIN,null,null)
+      configService.callApi(ConstantAPI.auth.LOGIN, null, null)
     );
 
     yield put(setData(data));
@@ -35,12 +35,16 @@ function* fetchDataSaga() {
 function* LoginUser(data) {
   try {
     const response = yield call(() =>
-      requestNoAuth.callApi(ConstantAPI.auth.LOGIN_USER, { ...data?.payload }, null)
+      requestNoAuth.callApi(
+        ConstantAPI.auth.LOGIN_USER,
+        { ...data?.payload },
+        null
+      )
     );
-    if (response?.success===true) {
+    if (response?.success === true) {
       setToken(JSON.stringify(response));
       window.location.href = "/";
-    }else {
+    } else {
       message.error(response.reason);
     }
   } catch (error) {
@@ -51,7 +55,11 @@ function* LoginUser(data) {
 function* LoginAdmin(data) {
   try {
     const response = yield call(() =>
-      requestNoAuth.callApi(ConstantAPI.auth.LOGIN_ADMIN,{...data?.payload}, null )
+      requestNoAuth.callApi(
+        ConstantAPI.auth.LOGIN_ADMIN,
+        { ...data?.payload },
+        null
+      )
     );
 
     if (response?.success === true) {
@@ -60,7 +68,6 @@ function* LoginAdmin(data) {
     } else {
       message.error(response.reason);
     }
-
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -77,8 +84,7 @@ function* RegisterAcount(data) {
     );
 
     if (response?.success === true) {
-      message.success('thành công');
-
+      message.success("thành công");
     } else {
       message.error(response.reason);
     }
@@ -90,16 +96,11 @@ function* RegisterAcount(data) {
 function* FetchProductAdmin() {
   try {
     const response = yield call(() =>
-      requestNoAuth.callApi(
-        ConstantAPI.product.GET_ALL,
-        null,
-        null
-      )
+      requestNoAuth.callApi(ConstantAPI.product.GET_ALL, null, null)
     );
 
     if (response?.success === true) {
       yield put(setDataProductAdmin(response?.data?.row));
-      
     } else {
       message.error(response.reason);
     }
@@ -108,10 +109,12 @@ function* FetchProductAdmin() {
   }
 }
 
-function* FetchProductUser() {
+function* FetchProductUser(data) {
   try {
     const response = yield call(() =>
-      configService.callApi(ConstantAPI.product.GET_ALL, null, null)
+      configService.callApi(ConstantAPI.product.GET_ALL, null, {
+        ...data?.payload,
+      })
     );
 
     if (response?.success === true) {
@@ -125,7 +128,6 @@ function* FetchProductUser() {
   }
 }
 
-
 function* CreateProduct(data) {
   try {
     const response = yield call(() =>
@@ -133,7 +135,7 @@ function* CreateProduct(data) {
     );
 
     if (response?.success === true) {
-      message.success('thành công');
+      message.success("thành công");
       yield put(adminGetAllProduct());
     } else {
       message.error(response.reason);
@@ -146,7 +148,11 @@ function* CreateProduct(data) {
 function* FetchProductDeatil(data) {
   try {
     const response = yield call(() =>
-      configService.get(`${ConstantAPI.product.GET_PRODUCT_BY_ID.url}/${data?.payload?.id}`, null, null)
+      configService.get(
+        `${ConstantAPI.product.GET_PRODUCT_BY_ID.url}/${data?.payload?.id}`,
+        null,
+        null
+      )
     );
 
     if (response?.success === true) {
@@ -179,7 +185,7 @@ function* CreateCard(data) {
 function* FetchCard() {
   try {
     const response = yield call(() =>
-    configService.callApi(ConstantAPI.card.GET_ALL, null, null)
+      configService.callApi(ConstantAPI.card.GET_ALL, null, null)
     );
 
     if (response?.success === true) {
@@ -196,7 +202,11 @@ function* FetchCard() {
 function* DeleteCard(data) {
   try {
     const response = yield call(() =>
-      configService.delete(ConstantAPI.card.CREATE.url+'/'+data?.payload?.id, data?.payload, null)
+      configService.delete(
+        ConstantAPI.card.CREATE.url + "/" + data?.payload?.id,
+        data?.payload,
+        null
+      )
     );
 
     if (response?.success === true) {
@@ -230,7 +240,7 @@ function* OrderProduct(data) {
 function* FetchOderAdmin() {
   try {
     const response = yield call(() =>
-    configService.callApi(ConstantAPI.order.GET_ALL, null, null)
+      configService.callApi(ConstantAPI.order.GET_ALL, null, null)
     );
 
     if (response?.success === true) {
@@ -244,11 +254,14 @@ function* FetchOderAdmin() {
   }
 }
 
-
 function* FetchOderDetail(data) {
   try {
     const response = yield call(() =>
-    configService.get(ConstantAPI.order.GET_PRODUCT_BY_ID.url+'/'+data.payload.id, null, null)
+      configService.get(
+        ConstantAPI.order.GET_PRODUCT_BY_ID.url + "/" + data.payload.id,
+        null,
+        null
+      )
     );
 
     if (response?.success === true) {
@@ -265,11 +278,14 @@ function* FetchOderDetail(data) {
 function* GenQRCode(data) {
   try {
     const response = yield call(() =>
-    configService.post('https://api.vietqr.io/v2/generate', {...data?.payload}, null)
+      configService.post(
+        "https://api.vietqr.io/v2/generate",
+        { ...data?.payload },
+        null
+      )
     );
 
     yield put(setQRCode(response?.data));
-
 
     yield put(setLoading(false));
   } catch (error) {

@@ -27,7 +27,6 @@ import blog11 from "../../../assets/images/homepage/blog11.png";
 import blog12 from "../../../assets/images/homepage/blog12.png";
 import mobile from "../../../assets/images/silder/mobile.png";
 
-
 const HomePage = ({ type = 1 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -47,38 +46,38 @@ const HomePage = ({ type = 1 }) => {
   return (
     <LauoutDefault type={type}>
       <div className="container !tw-my-[24px]">
-      <Carousel autoplay autoplaySpeed={5000} speed={1000}>
-        <div className="!tw-rounded-[24px] !tw-w-full">
-          <img
-            className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
-            alt="silder1"
-            src={slider1}
-          />
-        </div>
-        <div className="!tw-rounded-[24px] !tw-w-full">
-          <img
-            className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
-            alt="silder2"
-            src={slider2}
-          />
-        </div>
-        <div className="!tw-rounded-[24px] !tw-w-full">
-          <img
-            className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
-            alt="silder4"
-            src={slider3}
-          />
-        </div>
-        <div className="!tw-rounded-[24px] !tw-w-full">
-          <img
-            className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
-            alt="silder4"
-            src={slider4}
-          />
-        </div>
-      </Carousel>
+        <Carousel autoplay autoplaySpeed={5000} speed={1000}>
+          <div className="!tw-rounded-[24px] !tw-w-full">
+            <img
+              className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
+              alt="silder1"
+              src={slider1}
+            />
+          </div>
+          <div className="!tw-rounded-[24px] !tw-w-full">
+            <img
+              className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
+              alt="silder2"
+              src={slider2}
+            />
+          </div>
+          <div className="!tw-rounded-[24px] !tw-w-full">
+            <img
+              className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
+              alt="silder4"
+              src={slider3}
+            />
+          </div>
+          <div className="!tw-rounded-[24px] !tw-w-full">
+            <img
+              className="!tw-w-full tw-h-[550px] !tw-rounded-[24px]"
+              alt="silder4"
+              src={slider4}
+            />
+          </div>
+        </Carousel>
       </div>
-    
+
       <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[275px]">
         <div className="tw-relative">
           <img
@@ -113,7 +112,9 @@ const HomePage = ({ type = 1 }) => {
                     padding: "8px",
                   }}
                   className="hoverable-card"
-                  cover={<img alt="example" src={productImage} />}
+                  cover={
+                    <img alt="example" src={i?.image_url || productImage} />
+                  }
                   onClick={() => viewDetail(i.id)}
                 >
                   <div>
@@ -186,7 +187,8 @@ const HomePage = ({ type = 1 }) => {
               Bộ sưu tập được đề xuất
             </div>
             <div className="tw-text-center tw-mb-8 tw-text-[16px] tw-font-[400] tw-text-white">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
             </div>
             <div className="tw-p-6 container tw-flex tw-flex-wrap tw-w-full tw-mb-10">
               <div className="tw-w-[33%_-_24px] tw-min-w[300px] tw-max-w-[500px] tw-mr-6">
@@ -219,16 +221,22 @@ const HomePage = ({ type = 1 }) => {
             </div>
           </div>
           <div className="container tw-mb-10 tw-flex">
-              <div className="tw-w-1/2 tw-flex tw-items-end justify-center tw-flex-col tw-pr-3">
-                <div className=" tw-pt-[50px]">
-                  <img alt="blog" src={blog7} className="tw-h-[640px] tw-rounded-[16px]"/>
-                </div>
-                <div className="tw-text-[48px] tw-font-[700] tw-mt-6">Bộ sưu tập khí tài theo từng thời kỳ</div>
+            <div className="tw-w-1/2 tw-flex tw-items-end justify-center tw-flex-col tw-pr-3">
+              <div className=" tw-pt-[50px]">
+                <img
+                  alt="blog"
+                  src={blog7}
+                  className="tw-h-[640px] tw-rounded-[16px]"
+                />
               </div>
-              <div className="tw-w-1/2 tw-pl-3">
-                <img alt="blog" src={blog8}/>
-                <img alt="blog" src={blog9} className="tw-pl-3"/>
+              <div className="tw-text-[48px] tw-font-[700] tw-mt-6">
+                Bộ sưu tập khí tài theo từng thời kỳ
               </div>
+            </div>
+            <div className="tw-w-1/2 tw-pl-3">
+              <img alt="blog" src={blog8} />
+              <img alt="blog" src={blog9} className="tw-pl-3" />
+            </div>
           </div>
           <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[275px]">
             <div className="tw-relative">
@@ -244,27 +252,54 @@ const HomePage = ({ type = 1 }) => {
               Sản phẩm theo nhãn hàng được Đề xuất
             </div>
             <div className="tw-text-center tw-mb-10 tw-text-[16px] tw-font-[400] tw-text-white">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
             </div>
             <div className="container tw-mb-10 tw-flex">
               <div className="tw-w-[60%] tw-flex tw-items-center tw-justify-center">
                 <div className="tw-px-[40px] tw-py-[60px] tw-bg-gradient-to-r tw-from-[#ffffff66] tw-to-[#ffffff0d]">
-                  <div className="tw-text-white tw-text-[20px] tw-font-[700]">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                  <div className="tw-text-white tw-text-[20px] tw-font-[700]">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
+                  </div>
                   <ul className="tw-pl-0 ul-info">
-                    <li className="tw-mb-3 tw-text-white tw-text-[14px] tw-font-[500]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </li>
-                    <li className="tw-mb-3 tw-text-white tw-text-[14px] tw-font-[500]">When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,</li>
-                    <li className="tw-mb-3 tw-text-white tw-text-[14px] tw-font-[500]">Remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
+                    <li className="tw-mb-3 tw-text-white tw-text-[14px] tw-font-[500]">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s,{" "}
+                    </li>
+                    <li className="tw-mb-3 tw-text-white tw-text-[14px] tw-font-[500]">
+                      When an unknown printer took a galley of type and
+                      scrambled it to make a type specimen book. It has survived
+                      not only five centuries, but also the leap into electronic
+                      typesetting,
+                    </li>
+                    <li className="tw-mb-3 tw-text-white tw-text-[14px] tw-font-[500]">
+                      Remaining essentially unchanged. It was popularised in the
+                      1960s with the release of Letraset sheets containing Lorem
+                      Ipsum passages, and more recently with desktop publishing
+                      software like Aldus PageMaker including versions of Lorem
+                      Ipsum.
+                    </li>
                   </ul>
                 </div>
                 <div className="">
-                  <img alt="blog" src={blog7} className="tw-rounded-[16px]"/>
+                  <img alt="blog" src={blog7} className="tw-rounded-[16px]" />
                 </div>
               </div>
               <div className="tw-w-[40%] tw-pl-6 tw-flex tw-justify-between tw-flex-col">
-                <img alt="blog" src={blog12} className="tw-pl-3 !tw-w-[400px] tw-h-[400px]"/>
-                <img alt="blog" src={blog11} className="tw-w-[424px] tw-h-[400px]" />
+                <img
+                  alt="blog"
+                  src={blog12}
+                  className="tw-pl-3 !tw-w-[400px] tw-h-[400px]"
+                />
+                <img
+                  alt="blog"
+                  src={blog11}
+                  className="tw-w-[424px] tw-h-[400px]"
+                />
               </div>
-          </div>
+            </div>
           </div>
           <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[300px]">
             <div className="tw-relative">
@@ -276,44 +311,45 @@ const HomePage = ({ type = 1 }) => {
             </div>
           </div>
           <div className="tw-text-center tw-mb-4 tw-mt-0 tw-text-[36px] tw-font-[700] tw-text-white">
-              Khuyến mại đang diễn ra
-            </div>
-            <div className="tw-text-center tw-mb-8 tw-text-[16px] tw-font-[400] tw-text-white">
-              Nhanh tay rinh ngay khuyến mại - Deal Shock được đề xuất hằng ngày của chúng tôi chỉ còn
-            </div>
-            <div className="tw-p-6 container tw-flex tw-flex-wrap tw-w-full tw-mb-10">
-              {listBuyMuch.map((i) => (
-                <Card
-                  key={i.id}
-                  hoverable={true}
-                  style={{
-                    width: "calc(25% - 24px)",
-                    maxWidth: "350px",
-                    minWidth: "200px",
-                    marginRight: "24px",
-                    padding: "8px",
-                  }}
-                  className="hoverable-card"
-                  cover={<img alt="example" src={productImage} />}
-                  onClick={() => viewDetail(i.id)}
-                >
-                  <div>
-                    <div className="tw-text-white tw-font-[700] tw-mb-4">
-                      {i?.name}
+            Khuyến mại đang diễn ra
+          </div>
+          <div className="tw-text-center tw-mb-8 tw-text-[16px] tw-font-[400] tw-text-white">
+            Nhanh tay rinh ngay khuyến mại - Deal Shock được đề xuất hằng ngày
+            của chúng tôi chỉ còn
+          </div>
+          <div className="tw-p-6 container tw-flex tw-flex-wrap tw-w-full tw-mb-10">
+            {listBuyMuch.map((i) => (
+              <Card
+                key={i.id}
+                hoverable={true}
+                style={{
+                  width: "calc(25% - 24px)",
+                  maxWidth: "350px",
+                  minWidth: "200px",
+                  marginRight: "24px",
+                  padding: "8px",
+                }}
+                className="hoverable-card"
+                cover={<img alt="example" src={i?.image_url || productImage} />}
+                onClick={() => viewDetail(i.id)}
+              >
+                <div>
+                  <div className="tw-text-white tw-font-[700] tw-mb-4">
+                    {i?.name}
+                  </div>
+                  <div className="tw-flex tw-items-center tw-justify-between">
+                    <div className="tw-text-[#FFC43F] tw-text-[18px] tw-font-[700] tw-leading-[36px]">
+                      {i.price_each}VND
                     </div>
-                    <div className="tw-flex tw-items-center tw-justify-between">
-                      <div className="tw-text-[#FFC43F] tw-text-[18px] tw-font-[700] tw-leading-[36px]">
-                        {i.price_each}VND
-                      </div>
-                      <div className="tw-text-white ">
-                        SL:<span>{i.product_quantity}</span>
-                      </div>
+                    <div className="tw-text-white ">
+                      SL:<span>{i.product_quantity}</span>
                     </div>
                   </div>
-                </Card>
-              ))}
-            </div>
-            <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[300px]">
+                </div>
+              </Card>
+            ))}
+          </div>
+          <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[300px]">
             <div className="tw-relative">
               <img
                 className="tw-absolute tw-left-[0px]"
@@ -321,25 +357,39 @@ const HomePage = ({ type = 1 }) => {
                 src={vector1}
               />
             </div>
-        
           </div>
           <div className="container tw-mb-10">
-              <div className=" tw-bg-[#272621] tw-rounded-[16px] tw-w-full tw-p-[40px] 3xl:tw-p-[80px] tw-flex tw-h-[450px]">
-                  <div className="tw-w-[40%] tw-relative tw-flex tw-top-[-200px] tw-mr-[48px]">
-                    <div className="tw-absolute tw-h-[900px]">
-                      <img alt="mobile" src={mobile} className="tw-w-[600px]"/>
-                    </div>
-                  </div>
-                  <div className="tw-w-[60%]">
-                    <div className="tw-text-white tw-text-[28px] tw-mb-4">Gian hàng sàn thương mại điện tử</div>
-                    <ul className="tw-pl-0 ul-info">
-                    <li className="tw-mb-4 tw-text-white tw-text-[14px] tw-font-[500]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
-                    <li className="tw-mb-4 tw-text-white tw-text-[14px] tw-font-[500]">It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</li>
-                  </ul>
-                  </div>
+            <div className=" tw-bg-[#272621] tw-rounded-[16px] tw-w-full tw-p-[40px] 3xl:tw-p-[80px] tw-flex tw-h-[450px]">
+              <div className="tw-w-[40%] tw-relative tw-flex tw-top-[-200px] tw-mr-[48px]">
+                <div className="tw-absolute tw-h-[900px]">
+                  <img alt="mobile" src={mobile} className="tw-w-[600px]" />
+                </div>
+              </div>
+              <div className="tw-w-[60%]">
+                <div className="tw-text-white tw-text-[28px] tw-mb-4">
+                  Gian hàng sàn thương mại điện tử
+                </div>
+                <ul className="tw-pl-0 ul-info">
+                  <li className="tw-mb-4 tw-text-white tw-text-[14px] tw-font-[500]">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
+                  </li>
+                  <li className="tw-mb-4 tw-text-white tw-text-[14px] tw-font-[500]">
+                    It has survived not only five centuries, but also the leap
+                    into electronic typesetting, remaining essentially
+                    unchanged. It was popularised in the 1960s with the release
+                    of Letraset sheets containing Lorem Ipsum passages, and more
+                    recently with desktop publishing software like Aldus
+                    PageMaker including versions of Lorem Ipsum.
+                  </li>
+                </ul>
               </div>
             </div>
-            <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[325px]">
+          </div>
+          <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[325px]">
             <div className="tw-relative">
               <img
                 className="tw-absolute tw-left-[0px]"
@@ -347,46 +397,45 @@ const HomePage = ({ type = 1 }) => {
                 src={vector3}
               />
             </div>
-        
           </div>
           <div className="tw-text-center tw-mb-4 tw-mt-0 tw-text-[36px] tw-font-[700] tw-text-white">
-                DEAL SHOCK SẮP BẮT ĐẦU
-            </div>
-            <div className="tw-text-center tw-mb-10 tw-text-[16px] tw-font-[400] tw-text-white">
-              Deal Shock được đề xuất hằng ngày của chúng tôi diễn ra sau
-            </div>
-            <div className="tw-p-6 container tw-flex tw-flex-wrap tw-w-full tw-mb-10">
-              {listBuyMuch.map((i) => (
-                <Card
-                  key={i.id}
-                  hoverable={true}
-                  style={{
-                    width: "calc(25% - 24px)",
-                    maxWidth: "350px",
-                    minWidth: "200px",
-                    marginRight: "24px",
-                    padding: "8px",
-                  }}
-                  className="hoverable-card"
-                  cover={<img alt="example" src={productImage} />}
-                  onClick={() => viewDetail(i.id)}
-                >
-                  <div>
-                    <div className="tw-text-white tw-font-[700] tw-mb-4">
-                      {i?.name}
+            DEAL SHOCK SẮP BẮT ĐẦU
+          </div>
+          <div className="tw-text-center tw-mb-10 tw-text-[16px] tw-font-[400] tw-text-white">
+            Deal Shock được đề xuất hằng ngày của chúng tôi diễn ra sau
+          </div>
+          <div className="tw-p-6 container tw-flex tw-flex-wrap tw-w-full tw-mb-10">
+            {listBuyMuch.map((i) => (
+              <Card
+                key={i.id}
+                hoverable={true}
+                style={{
+                  width: "calc(25% - 24px)",
+                  maxWidth: "350px",
+                  minWidth: "200px",
+                  marginRight: "24px",
+                  padding: "8px",
+                }}
+                className="hoverable-card"
+                cover={<img alt="example" src={i?.image_url || productImage} />}
+                onClick={() => viewDetail(i.id)}
+              >
+                <div>
+                  <div className="tw-text-white tw-font-[700] tw-mb-4">
+                    {i?.name}
+                  </div>
+                  <div className="tw-flex tw-items-center tw-justify-between">
+                    <div className="tw-text-[#FFC43F] tw-text-[18px] tw-font-[700] tw-leading-[36px]">
+                      {i.price_each}VND
                     </div>
-                    <div className="tw-flex tw-items-center tw-justify-between">
-                      <div className="tw-text-[#FFC43F] tw-text-[18px] tw-font-[700] tw-leading-[36px]">
-                        {i.price_each}VND
-                      </div>
-                      <div className="tw-text-white ">
-                        SL:<span>{i.product_quantity}</span>
-                      </div>
+                    <div className="tw-text-white ">
+                      SL:<span>{i.product_quantity}</span>
                     </div>
                   </div>
-                </Card>
-              ))}
-            </div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       )}
     </LauoutDefault>

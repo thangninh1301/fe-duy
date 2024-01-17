@@ -68,10 +68,7 @@ const OrderUser = () => {
         title: "Thanh toán",
         dataIndex: "money",
         render: (value, item) => (
-          <Link
-            to={`/order/${item?.order?.id}`}
-            className="tw-text-[16px]"
-          >
+          <Link to={`/order/${item?.order?.id}`} className="tw-text-[16px]">
             Thanh toán
           </Link>
         ),
@@ -95,6 +92,7 @@ const OrderUser = () => {
               columns={columns}
               dataSource={listOrder}
               pagination={false}
+              bordered
             />
           ) : (
             <Empty />
