@@ -73,8 +73,8 @@ const Card = () => {
           </div>
         ),
       },
-      // eslint-disable-next-line
     ],
+    // eslint-disable-next-line
     [listCard]
   );
 

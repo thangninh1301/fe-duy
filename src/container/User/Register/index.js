@@ -42,10 +42,10 @@ const Register = () => {
       >
         {({ values, setFieldValue, handleSubmit }) => {
           return (
-            <div className="tw-bg-[#1C1B15] tw-flex tw-items-center tw-justify-center tw-my-12 ">
+            <div className="tw-bg-[#1C1B15] tw-flex tw-items-center tw-justify-center tw-my-12 !tw-min-h-[calc(100vh_-_500px)]">
               <div className="tw-bg-white tw-w-[500px] tw-rounded-[10px] tw-shadow-2xl tw-px-6 tw-py-12 tw-flex tw-items-center  tw-flex-col">
                 <div className="tw-text-center tw-text-[24px] tw-font-[700] tw-mb-10">
-                  Đăng nhập
+                  Đăng ký
                 </div>
                 <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
                   <div className="tw-w-full">
@@ -90,7 +90,7 @@ const Register = () => {
                 <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
                   <button
                     onClick={() => handleSubmit(values)}
-                    className="tw-w-full tw-flex tw-items-center tw-justify-center tw-p-2"
+                    className="tw-w-full tw-flex tw-items-center tw-justify-center tw-p-2 tw-bg-[#DC1814] tw-border-[#DC1814] tw-border-0 tw-text-white tw-font-[500] tw-rounded-[8px]"
                     type="submit"
                   >
                     Đăng ký

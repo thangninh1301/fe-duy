@@ -6,7 +6,6 @@ import {
   Empty,
   Card,
   Skeleton,
-  Select,
   Modal,
   Radio,
   Space,
@@ -15,7 +14,6 @@ import {
 } from "antd";
 import productImage from "../../../assets/images/productImage.png";
 import {
-  SORT,
   BRANCH_LIST,
   COUNTRY_LIST,
   SIZE_LIST,
@@ -27,10 +25,10 @@ import { Formik } from "formik";
 const ProductUser = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  // eslint-disable-next-line
   const [searchParams, setSearchParams] = useSearchParams();
   const Loading = useSelector((state) => state.Loading);
   const listProductUser = useSelector((state) => state.listProductUser);
-  const [sort, setSort] = useState("1");
 
   const [openModalFilter, setOpenModalFilter] = useState(false);
   const viewDetail = (id) => {
@@ -117,17 +115,6 @@ const ProductUser = () => {
               sản phẩm
             </div>
             <div className="tw-flex tw-items-center tw-justify-end">
-              <div className=" tw-w-[200px] tw-text-white">Thứ tự hiển thị</div>
-              <Select
-                name="size"
-                className="tw-w-full"
-                defaultValue={sort || ""}
-                placeholder="Chọn kích thước"
-                onChange={(value) => {
-                  setSort(value);
-                }}
-                options={SORT}
-              />
             </div>
           </div>
           <div className="tw-flex tw-items-center tw-mb-6 tw-cursor-pointer">

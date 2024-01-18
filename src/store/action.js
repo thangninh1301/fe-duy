@@ -96,3 +96,8 @@ export const setQRCode = (data) => ({
   type: "SET_QRCODE",
   payload: data,
 });
+
+export const DeleteProduct = (data) => ({
+  type: "DELETE_PRODUCT",
+  payload: data,
+});

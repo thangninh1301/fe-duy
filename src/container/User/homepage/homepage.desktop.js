@@ -191,23 +191,23 @@ const HomePage = ({ type = 1 }) => {
               industry.
             </div>
             <div className="tw-p-6 container tw-flex tw-flex-wrap tw-w-full tw-mb-10">
-              <div className="tw-w-[33%_-_24px] tw-min-w[300px] tw-max-w-[500px] tw-mr-6">
-                <img alt="blog" src={blog2} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
+                <img className="tw-w-full" alt="blog" src={blog2} />
               </div>
-              <div className="tw-w-[33%_-_24px] tw-min-w[300px] tw-max-w-[500px] tw-mr-6">
-                <img alt="blog" src={blog2} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
+                <img className="tw-w-full" alt="blog" src={blog2} />
               </div>
-              <div className="tw-w-[33%_-_24px] tw-min-w[300px] tw-max-w-[500px] tw-mr-6">
-                <img alt="blog" src={blog3} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
+                <img className="tw-w-full" alt="blog" src={blog3} />
               </div>
-              <div className="tw-w-[33%_-_24px] tw-min-w[300px] tw-max-w-[500px] tw-mr-6">
-                <img alt="blog" src={blog4} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
+                <img className="tw-w-full" alt="blog" src={blog4} />
               </div>
-              <div className="tw-w-[33%_-_24px] tw-min-w[300px] tw-max-w-[500px] tw-mr-6">
-                <img alt="blog" src={blog5} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
+                <img className="tw-w-full" alt="blog" src={blog5} />
               </div>
-              <div className="tw-w-[33%_-_24px] tw-min-w[300px] tw-max-w-[500px] tw-mr-6">
-                <img alt="blog" src={blog6} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
+                <img className="tw-w-full" alt="blog" src={blog6} />
               </div>
             </div>
           </div>
@@ -257,7 +257,7 @@ const HomePage = ({ type = 1 }) => {
             </div>
             <div className="container tw-mb-10 tw-flex">
               <div className="tw-w-[60%] tw-flex tw-items-center tw-justify-center">
-                <div className="tw-px-[40px] tw-py-[60px] tw-bg-gradient-to-r tw-from-[#ffffff66] tw-to-[#ffffff0d]">
+                <div className="tw-px-[40px] tw-py-[60px] tw-bg-gradient-to-r tw-from-[#ffffff66] tw-to-[#ffffff0d] tw-rounded-tl-[16px] tw-rounded-bl-[16px]">
                   <div className="tw-text-white tw-text-[20px] tw-font-[700]">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry.

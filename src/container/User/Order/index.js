@@ -84,6 +84,9 @@ const OrderUser = () => {
     <LauoutDefault type={2}>
       <div className="tw-bg-white ">
         <div className="tw-p-6 container">
+          <div className="tw-flex tw-items-center tw-justify-between tw-my-6">
+            <div className="tw-text-[20px] tw-font-[700]">Đơn hàng</div>
+          </div>
           {listOrder?.length > 0 ? (
             <Table
               rowKey={(record) =>

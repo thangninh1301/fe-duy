@@ -24,7 +24,7 @@ const Guide = () => {
               <img alt="guide" src={guide1} className="tw-w-full" />
             </div>
             <div className="tw-w-[calc(50%_-_40px)]">
-              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700]">
+              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700] tw-pt-10">
                 Dụng cụ cơ bản - Kìm cắt chi tiết
               </div>
               <ul className="ul-info">
@@ -48,7 +48,7 @@ const Guide = () => {
           </div>
           <div className="tw-w-full tw-flex tw-justify-between tw-mb-10">
             <div className="tw-w-[calc(50%_-_40px)]">
-              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700]">
+              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700] tw-pt-10">
                 Dụng cụ cơ bản - kìm uốn chi tiết
               </div>
               <ul className="ul-info">
@@ -78,7 +78,7 @@ const Guide = () => {
               <img alt="guide" src={guide3} className="tw-w-full" />
             </div>
             <div className="tw-w-[calc(50%_-_40px)]">
-              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700]">
+              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700] tw-pt-10">
                 Dụng cụ cơ bản - bảng kê (CUTTING MAT)
               </div>
               <ul className="ul-info">
@@ -102,7 +102,7 @@ const Guide = () => {
           </div>
           <div className="tw-w-full tw-flex tw-justify-between tw-mb-10">
             <div className="tw-w-[calc(50%_-_40px)]">
-              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700]">
+              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700] tw-pt-10">
                 Dụng cụ cơ bản- NHÍP dán decal
               </div>
               <ul className="ul-info">
@@ -121,7 +121,7 @@ const Guide = () => {
               <img alt="guide" src={guide5} className="tw-w-full" />
             </div>
             <div className="tw-w-[calc(50%_-_40px)]">
-              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700]">
+              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700] tw-pt-10">
                 Dụng cụ cơ bản - air brush - máy nén khí
               </div>
               <ul className="ul-info">
@@ -145,7 +145,7 @@ const Guide = () => {
           </div>
           <div className="tw-w-full tw-flex tw-justify-between tw-mb-10">
             <div className="tw-w-[calc(50%_-_40px)]">
-              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700]">
+              <div className="tw-text-[#000] tw-text-[20px] tw-font-[700] tw-pt-10">
                 dụng cụ bảo quản - hộp mica
               </div>
               <ul className="ul-info">

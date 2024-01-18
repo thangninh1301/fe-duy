@@ -12,7 +12,7 @@ import {
   Upload,
   message,
 } from "antd";
-import { EyeOutlined } from "@ant-design/icons";
+import { DeleteOutlined } from "@ant-design/icons";
 import * as Yup from "yup";
 import { Formik, ErrorMessage } from "formik";
 import {
@@ -21,7 +21,7 @@ import {
   SIZE_LIST,
   TYPE_LIST,
 } from "../../../constants/common";
-import { UploadOutlined } from "@ant-design/icons";
+import { UploadOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 import { adminRequest } from "../../../services/adminRequest";
 import { ConstantAPI } from "../../../services/ConstantAPI";
 
@@ -32,6 +32,8 @@ const Product = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [fileList, setFileList] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
+   const [idSlected, setIdSlected] = useState(null);
+   const [isModalOpenConfirm, setisModalOpenConfirm] = useState(false);
   const beforeUpload = (file) => {
     const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
     if (!isJpgOrPng) {
@@ -64,6 +66,21 @@ const Product = () => {
       message.error("Upload thất bại");
     }
   };
+ const showModalConfirm = (id) => {
+   setIdSlected(id);
+   setisModalOpenConfirm(true);
+ };
+    const handleDelete = useCallback(
+      () => {
+        dispatch({
+          type: "DELETE_PRODUCT",
+          payload: { id: idSlected },
+        });
+        handleCancel();
+      },
+      // eslint-disable-next-line
+      [idSlected, dispatch]
+    );
 
   const initialValues = {
     name: "",
@@ -107,6 +124,7 @@ const Product = () => {
   );
   const handleCancel = () => {
     setIsModalOpen(false);
+    setisModalOpenConfirm(false);
   };
 
   const columns = [
@@ -134,8 +152,8 @@ const Product = () => {
       title: "",
       dataIndex: "action",
       render: (value, item) => (
-        <div>
-          <EyeOutlined />
+        <div onClick={showModalConfirm(item.id)}>
+          <DeleteOutlined />
         </div>
       ),
     },
@@ -148,7 +166,8 @@ const Product = () => {
     <LauoutDefault type={2}>
       <div className="tw-bg-white ">
         <div className="tw-p-6 container">
-          <div className="tw-flex tw-items-center tw-justify-end tw-mb-6">
+          <div className="tw-flex tw-items-center tw-justify-between tw-my-6">
+            <div className="tw-text-[20px] tw-font-[700]">Sản phẩm</div>
             <Button onClick={showModal} type="primary">
               Thêm sản phẩm
             </Button>
@@ -182,7 +201,7 @@ const Product = () => {
             >
               {({ values, setFieldValue, handleSubmit }) => {
                 return (
-                  <div className="tw-bg-white tw-rounded-[10px] tw-p-6 tw-flex tw-items-center  tw-flex-col">
+                  <div className="tw-bg-white tw-rounded-[10px] tw-px-6 tw-pt-6 tw-flex tw-items-center  tw-flex-col">
                     <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
                       <div className="tw-w-full">
                         <div className="tw-mb-1">Tên sản phẩm</div>
@@ -358,7 +377,7 @@ const Product = () => {
                         />
                       </div>
                     </div>
-                    <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-mb-4">
+                    <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-my-4">
                       <Button type="default" onClick={handleCancel}>
                         Huỷ bỏ
                       </Button>
@@ -377,6 +396,24 @@ const Product = () => {
           </Modal>
         </div>
       </div>
+      <Modal
+        open={isModalOpenConfirm}
+        centered={true}
+        onCancel={handleCancel}
+        onOk={handleDelete}
+        width={450}
+      >
+        <div className="modal-confirm-container tw-flex tw-items-center tw-py-6">
+          <div>
+            <ExclamationCircleOutlined className="tw-text-[#FCAF17] tw-mr-2" />
+          </div>
+          <div className="modal-confirm-right margin-left-20">
+            <div className="modal-confirm-title tw-font-[500] tw-text-[16px]">
+              Bạn có muốn xóa đơn hàng này khỏi giỏ hàng
+            </div>
+          </div>
+        </div>
+      </Modal>
     </LauoutDefault>
   );
 };

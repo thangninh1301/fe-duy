@@ -36,6 +36,7 @@ const News = () => {
                     minWidth: "200px",
                     marginRight: "24px",
                     padding: "8px",
+                    marginBottom:'24px'
                   }}
                   className="hoverable-card"
                   cover={<img alt="example" src={i.img} />}

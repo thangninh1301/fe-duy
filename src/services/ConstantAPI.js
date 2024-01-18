@@ -26,6 +26,10 @@ export const ConstantAPI = {
       url: "/api/v1/product",
       method: "POST",
     },
+    DELETE: {
+      url: "/api/v1/product",
+      method: "DELETE",
+    },
   },
   card: {
     GET_ALL: {
@@ -42,7 +46,7 @@ export const ConstantAPI = {
     },
     DELETE: {
       url: "/api/v1/cart",
-      method: "POST",
+      method: "DELETE",
     },
   },
   order: {
