@@ -114,8 +114,7 @@ const ProductUser = () => {
               </span>
               sản phẩm
             </div>
-            <div className="tw-flex tw-items-center tw-justify-end">
-            </div>
+            <div className="tw-flex tw-items-center tw-justify-end"></div>
           </div>
           <div className="tw-flex tw-items-center tw-mb-6 tw-cursor-pointer">
             <div className="tw-text-white">Lọc sản phẩm theo :</div>
@@ -186,7 +185,11 @@ const ProductUser = () => {
                   }}
                   className="hoverable-card"
                   cover={
-                    <img alt="example" src={i?.image_url || productImage} />
+                    <img
+                      className="tw-h-[334px]"
+                      alt="example"
+                      src={i?.image_url || productImage}
+                    />
                   }
                   onClick={() => viewDetail(i.id)}
                 >

@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Carousel, Skeleton, Card } from "antd";
 import { useNavigate } from "react-router-dom";
 
-import slider1 from "../../../assets/images/silder/slider10.png";
-import slider2 from "../../../assets/images/silder/slider11.png";
-import slider3 from "../../../assets/images/silder/slider12.png";
-import slider4 from "../../../assets/images/silder/slider14.png";
+import slider1 from "../../../assets/images/homepage/slider1.jpg";
+import slider2 from "../../../assets/images/homepage/slider2.jpg";
+import slider3 from "../../../assets/images/homepage/slider3.jpg";
+import slider4 from "../../../assets/images/homepage/slider4.jpg";
 import productImage from "../../../assets/images/productImage.png";
 import vector from "../../../assets/images/silder/Vector.svg";
 import vector1 from "../../../assets/images/silder/Vector-1.svg";
@@ -113,7 +113,11 @@ const HomePage = ({ type = 1 }) => {
                   }}
                   className="hoverable-card"
                   cover={
-                    <img alt="example" src={i?.image_url || productImage} />
+                    <img
+                      className="tw-h-[334px]"
+                      alt="example"
+                      src={i?.image_url || productImage}
+                    />
                   }
                   onClick={() => viewDetail(i.id)}
                 >
@@ -192,7 +196,11 @@ const HomePage = ({ type = 1 }) => {
             </div>
             <div className="tw-p-6 container tw-flex tw-flex-wrap tw-w-full tw-mb-10">
               <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
-                <img className="tw-w-full" alt="blog" src={blog2} />
+                <img
+                  className="tw-w-full hoverable-card"
+                  alt="blog"
+                  src={blog2}
+                />
               </div>
               <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
                 <img className="tw-w-full" alt="blog" src={blog2} />
@@ -234,8 +242,8 @@ const HomePage = ({ type = 1 }) => {
               </div>
             </div>
             <div className="tw-w-1/2 tw-pl-3">
-              <img alt="blog" src={blog8} />
-              <img alt="blog" src={blog9} className="tw-pl-3" />
+              <img alt="blog" className="tw-w-full" src={blog8} />
+              <img alt="blog" className="tw-w-full tw-pl-3" src={blog9} />
             </div>
           </div>
           <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[275px]">
@@ -330,7 +338,13 @@ const HomePage = ({ type = 1 }) => {
                   padding: "8px",
                 }}
                 className="hoverable-card"
-                cover={<img alt="example" src={i?.image_url || productImage} />}
+                cover={
+                  <img
+                    className="tw-h-[334px]"
+                    alt="example"
+                    src={i?.image_url || productImage}
+                  />
+                }
                 onClick={() => viewDetail(i.id)}
               >
                 <div>
@@ -417,7 +431,13 @@ const HomePage = ({ type = 1 }) => {
                   padding: "8px",
                 }}
                 className="hoverable-card"
-                cover={<img alt="example" src={i?.image_url || productImage} />}
+                cover={
+                  <img
+                    className="tw-h-[334px]"
+                    alt="example"
+                    src={i?.image_url || productImage}
+                  />
+                }
                 onClick={() => viewDetail(i.id)}
               >
                 <div>
