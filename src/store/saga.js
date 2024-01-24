@@ -296,8 +296,30 @@ function* GenQRCode(data) {
 function* DeleteProduct(data) {
   try {
     const response = yield call(() =>
-      configService.delete(
-        ConstantAPI.card.CREATE.url + "/" + data?.payload?.id,
+      adminRequest.delete(
+        ConstantAPI.product.DELETE.url + "/" + data?.payload?.id,
+        data?.payload,
+        null
+      )
+    );
+
+    if (response?.success === true) {
+      message.success("thành công");
+      yield put(FetchProductAdmin());
+    } else {
+      message.error(response.reason);
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+
+function* updateProduct(data) {
+  try {
+    const response = yield call(() =>
+      adminRequest.put(
+        ConstantAPI.product.UPDATE.url +'/'+data?.payload?.id,
         data?.payload,
         null
       )
@@ -331,6 +353,7 @@ function* rootSaga() {
   yield takeEvery("FETCH_ORDER_DETAIL", FetchOderDetail);
   yield takeEvery("GEN_QRCODE", GenQRCode);
   yield takeEvery("DELETE_PRODUCT", DeleteProduct);
+   yield takeEvery("UPDATE_PRODUCT", updateProduct);
 }
 
 export default rootSaga;

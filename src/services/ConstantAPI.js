@@ -30,6 +30,10 @@ export const ConstantAPI = {
       url: "/api/v1/product",
       method: "DELETE",
     },
+    UPDATE: {
+      url: "/api/v1/product",
+      method: "PUT",
+    },
   },
   card: {
     GET_ALL: {

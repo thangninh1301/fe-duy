@@ -101,3 +101,8 @@ export const DeleteProduct = (data) => ({
   type: "DELETE_PRODUCT",
   payload: data,
 });
+
+export const updateProduct = (data) => ({
+  type: "UPDATE_PRODUCT",
+  payload: data,
+});
