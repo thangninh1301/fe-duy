@@ -33,7 +33,7 @@ const rank = (total) => {
           SĐT: <span>{profile?.phone}</span>
         </div>
         <div>
-          Rank: <span>{rank(profile?.total_payment)}</span>
+          Thành viên hạng: <span>{rank(profile?.total_payment)}</span>
         </div>
         <div>
           Tên người dùng: <span>{profile?.full_name}</span>
