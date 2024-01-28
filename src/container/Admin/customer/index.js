@@ -225,7 +225,7 @@ const Customer = () => {
                 </div>
                 <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
                   <div className="tw-w-full">
-                    <div className="tw-mb-1 tw-text-[#000]">Rank</div>
+                    <div className="tw-mb-1 tw-text-[#000]">Thành viên hạng</div>
                     <Input
                       disabled={true}
                       name="user_name"
