@@ -254,7 +254,7 @@ const ProductUser = () => {
                           onChange={(e) => setFieldValue("type", e)}
                       >
                           <Space className="tw-px-3 tw-w-full" direction="vertical">
-                              {TYPE_LIST.map((i) => {
+                              {COUNTRY_LIST.map((i) => {
                                   return (
                                       <div
                                           key={i.value}
