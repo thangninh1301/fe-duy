@@ -61,11 +61,6 @@ const Customer = () => {
   const columns = useMemo(() => {
     return [
       {
-        title: "Tên ",
-        dataIndex: "order",
-        render: (value, item) => <div>{item?.full_name}</div>,
-      },
-      {
         title: "Tên đăng nhập",
         dataIndex: "order",
         render: (value, item) => <div>{item?.user_name}</div>,
