@@ -212,24 +212,6 @@ const Customer = () => {
                 </div>
                 <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
                   <div className="tw-w-full">
-                    <div className="tw-mb-1 tw-text-[#000]">Tên</div>
-                    <Input
-                      disabled={true}
-                      name="full_name"
-                      value={values.full_name || ""}
-                      onChange={(event) => {
-                        setFieldValue("full_name", event.target.value);
-                      }}
-                    />
-                    <ErrorMessage
-                      className="invalid"
-                      name="full_name"
-                      component="div"
-                    />
-                  </div>
-                </div>
-                <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
-                  <div className="tw-w-full">
                     <div className="tw-mb-1 tw-text-[#000]">Tên đăng nhập</div>
                     <Input
                       disabled={true}
