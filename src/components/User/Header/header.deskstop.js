@@ -6,8 +6,8 @@ import message from "../../../assets/images/message.svg";
 import { Link } from "react-router-dom";
 import { TOKEN } from "../../../constants/index";
 import { getToken } from "../../../utils/index";
-import { Dropdown, Space, Avatar } from "antd";
-import { DownOutlined, UserOutlined } from "@ant-design/icons";
+import { Dropdown, Space } from "antd";
+import { DownOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();

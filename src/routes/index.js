@@ -14,7 +14,8 @@ import News from "../container/User/News/index";
 import Order from "../container/Admin/Order/index";
 import OrderUser from "../container/User/Order/index";
 import OrderDetail from "../container/User/OrderDetail/index";
-
+import Customer from "../container/Admin/customer/index";
+import Profile from "../container/Admin/profile/index";
 export const router = [
   {
     path: "/",
@@ -97,6 +98,18 @@ export const router = [
   {
     path: "/order/:id",
     element: <OrderDetail />,
+    permissions: true,
+    exact: true,
+  },
+  {
+    path: "/admin/customer",
+    element: <Customer />,
+    permissions: true,
+    exact: true,
+  },
+  {
+    path: "/admin/customer/:id",
+    element: <Profile />,
     permissions: true,
     exact: true,
   },

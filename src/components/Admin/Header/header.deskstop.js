@@ -106,6 +106,16 @@ const Header = () => {
               Đơn hàng
             </Link>
           </li>
+          <li className="tw-flex tw-items-center tw-justify-center tw-px-4 2xl:tw-px-[36px] tw-border-0 tw-border-r-[1px] tw-border-solid tw-border-[#fff] tw-py-1 tw-text-[#fff] tw-cursor-pointer">
+            <Link
+              to="/admin/customer"
+              className={`tw-text-white tw-text-[16px] ${
+                location?.pathname === "/admin/customer" ? "tw-font-[700]" : ""
+              }`}
+            >
+              Khách hàng
+            </Link>
+          </li>
         </ul>
       </div>
     </HeaderWrapper>

@@ -12,6 +12,8 @@ import {
   setDataOrder,
   setDataOrderDetail,
   setQRCode,
+  setCustomer,
+  setProfile,
 } from "./action";
 import { setToken, setTokenAdmin } from "../utils/index";
 import { configService } from "../services/configRequest";
@@ -315,6 +317,8 @@ function* DeleteProduct(data) {
 }
 
 
+
+
 function* updateProduct(data) {
   try {
     const response = yield call(() =>
@@ -328,6 +332,83 @@ function* updateProduct(data) {
     if (response?.success === true) {
       message.success("thành công");
       yield put(FetchProductAdmin());
+    } else {
+      message.error(response.reason);
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+function* FetchCustomerAdmin() {
+  try {
+    const response = yield call(() =>
+      adminRequest.callApi(ConstantAPI.customer.GET_ALL, null, null)
+    );
+
+    if (response?.success === true) {
+      yield put(setCustomer(response?.data?.users));
+    } else {
+      message.error(response.reason);
+    }
+    yield put(setLoading(false));
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+function* FetchProfile(data) {
+  try {
+    const response = yield call(() =>
+      adminRequest.get(ConstantAPI.customer.GET_BY_ID.url+'/'+data?.payload?.id, null, null)
+    );
+
+    if (response?.success === true) {
+      if(response?.data?.users?.length>0){
+       yield put(setProfile(response?.data?.users[0]));
+      }
+    } else {
+      message.error(response.reason);
+    }
+    yield put(setLoading(false));
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+function* DeleteCustomer(data) {
+  try {
+    const response = yield call(() =>
+      adminRequest.delete(
+        ConstantAPI.customer.DELETE.url + "/" + data?.payload?.id,
+        data?.payload,
+        null
+      )
+    );
+
+    if (response?.success === true) {
+      message.success("thành công");
+      yield put(FetchCustomerAdmin());
+    } else {
+      message.error(response.reason);
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+function* updateCustomer(data) {
+  try {
+    const response = yield call(() =>
+      adminRequest.put(
+        ConstantAPI.customer.UPDATE.url + "/" + data?.payload?.id,
+        data?.payload,
+        null
+      )
+    );
+
+    if (response?.success === true) {
+      message.success("thành công");
+      yield put(FetchCustomerAdmin());
     } else {
       message.error(response.reason);
     }
@@ -353,7 +434,11 @@ function* rootSaga() {
   yield takeEvery("FETCH_ORDER_DETAIL", FetchOderDetail);
   yield takeEvery("GEN_QRCODE", GenQRCode);
   yield takeEvery("DELETE_PRODUCT", DeleteProduct);
-   yield takeEvery("UPDATE_PRODUCT", updateProduct);
+  yield takeEvery("UPDATE_PRODUCT", updateProduct);
+  yield takeEvery("FETCH_CUSTOMER", FetchCustomerAdmin);
+  yield takeEvery("FETCH_CUSTOMER_DETAIL", FetchProfile);
+  yield takeEvery("UPDATE_CUSTOMER", updateCustomer);
+   yield takeEvery("DELETE_CUSTOMER", DeleteCustomer);
 }
 
 export default rootSaga;

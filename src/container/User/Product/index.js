@@ -7,14 +7,12 @@ import {
   Card,
   Skeleton,
   Modal,
-  Radio,
   Space,
   Checkbox,
   Button,
 } from "antd";
 import productImage from "../../../assets/images/productImage.png";
 import {
-  BRANCH_LIST,
   COUNTRY_LIST,
   SIZE_LIST,
   TYPE_LIST,

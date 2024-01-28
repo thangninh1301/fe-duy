@@ -10,10 +10,6 @@ import vnpay from "../../../assets/images/vnpay.svg";
 import momo from "../../../assets/images/momo.svg";
 import {
   StarFilled,
-  CreditCardOutlined,
-  SafetyOutlined,
-  PercentageOutlined,
-  ExperimentOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import notfound from "../../../assets/images/404.svg";

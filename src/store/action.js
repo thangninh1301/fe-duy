@@ -106,3 +106,18 @@ export const updateProduct = (data) => ({
   type: "UPDATE_PRODUCT",
   payload: data,
 });
+
+export const updateCustomer = (data) => ({
+  type: "UPDATE_CUSTOER",
+  payload: data,
+});
+
+export const setCustomer = (data) => ({
+  type: "SET_CUSTOMER",
+  payload: data,
+});
+
+export const setProfile = (data) => ({
+  type: "SET_PROFILE",
+  payload: data,
+});

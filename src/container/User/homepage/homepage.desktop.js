@@ -15,15 +15,7 @@ import vector1 from "../../../assets/images/silder/Vector-1.svg";
 import vector2 from "../../../assets/images/silder/Vector-2.svg";
 import vector3 from "../../../assets/images/silder/Vector-3.svg";
 import buymore from "../../../assets/images/silder/buymore.png";
-import blog2 from "../../../assets/images/homepage/blog2.png";
-import blog3 from "../../../assets/images/homepage/blog3.png";
-import blog4 from "../../../assets/images/homepage/blog4.png";
-import blog5 from "../../../assets/images/homepage/blog5.png";
-import blog6 from "../../../assets/images/homepage/blog6.png";
 import blog7 from "../../../assets/images/homepage/blog7.png";
-import blog8 from "../../../assets/images/homepage/blog8.png";
-import blog9 from "../../../assets/images/homepage/blog9.png";
-import blog11 from "../../../assets/images/homepage/blog11.png";
 import blog12 from "../../../assets/images/homepage/blog12.png";
 import mobile from "../../../assets/images/silder/mobile.png";
 
