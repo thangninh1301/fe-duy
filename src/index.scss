@@ -179,3 +179,19 @@ a{
 .remove-marker{
   list-style-type: none;
 }
+
+div.tw-flex.tw-justify-between.tw-mb-10.tw-w-full li{
+  padding-top: 20px;
+}
+
+div.tw-flex.tw-items-center.tw-justify-start.tw-mb-3 button {
+  height: 40px;
+}
+
+div.tw-flex.tw-items-center.tw-justify-end.tw-mb-4.tw-w-full button {
+  background: #DC180E;
+}
+
+.ant-tabs-tab-active {
+  color: #363636 !important;
+}

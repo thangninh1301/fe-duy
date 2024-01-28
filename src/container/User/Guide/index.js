@@ -45,19 +45,7 @@ const Guide = () => {
               </div>
               <ul className="ul-info">
                 <li>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </li>
-                <li>
-                  It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged.
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of Lorem Ipsum.
+                  Dùng để uốn tròn, uốn cong các loại dây và làm đồ trang sức. Kìm là dụng cụ cầm tay bằng kim loại có hai mỏ và hai càng bắt chéo để kẹp chặt hoặc uốn.
                 </li>
               </ul>
             </div>
@@ -75,19 +63,11 @@ const Guide = () => {
               </div>
               <ul className="ul-info">
                 <li>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+
+                  Bảng kê là một công cụ không thể thiếu để bảo vệ bề mặt của bàn làm việc hoặc bàn làm việc của bạn khỏi những vết cắt, vết keo hoặc bất kỳ tổn thương nào khác có thể xảy ra trong quá trình cắt giấy, làm cosplay, mô hình hóa, hoặc bất kỳ sở thích khác. Sau khi cắt, tạo mô hình, làm khuôn và sơn lên bề mặt, bạn có thể dễ dàng lau sạch và sẵn sàng bắt đầu dự án mới từ đầu.
                 </li>
                 <li>
-                  It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged.
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of Lorem Ipsum.
+                  Bảng kê là một “công cụ” đa năng mà chúng ta không phải lúc nào cũng để ý đến nhưng luôn vui mừng khi có được. Vì vậy, bạn có bao giờ thắc mắc bảng kê hoạt động như thế nào không?
                 </li>
               </ul>
             </div>
@@ -99,8 +79,7 @@ const Guide = () => {
               </div>
               <ul className="ul-info">
                 <li>
-                  Nhanh tay rinh ngay khuyến mại - Deal Shock được đề xuất hằng
-                  ngày của chúng tôi chỉ còn
+                  Chuyên dùng để kẹp chi tiết và dán decal cho mô hình
                 </li>
               </ul>
             </div>
@@ -118,19 +97,11 @@ const Guide = () => {
               </div>
               <ul className="ul-info">
                 <li>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                  Airbrush là một công cụ được ưa chuộng bởi các nhà sản xuất và người nghệ sĩ sáng tạo để tạo ra các tác phẩm nghệ thuật sặc sỡ trên bề mặt của mô hình. Người sử dụng Airbrush thường sử dụng sơn acrylic để tạo màu trên bề mặt nhựa, trang điểm trên da, và thậm chí cả màu nước trên giấy.
                 </li>
                 <li>
-                  It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged.
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of Lorem Ipsum.
+                  Khi kết nối với máy nén khí, airbrush bắn chất lỏng thành những giọt nhỏ hạt.
+                  Giúp tạo ra sự kết hợp mịn màng, lớp phủ và chuyển độ mà một cọ sơn thông thường không thể làm được.
                 </li>
               </ul>
             </div>
@@ -138,23 +109,15 @@ const Guide = () => {
           <div className="tw-w-full tw-flex tw-justify-between tw-mb-10">
             <div className="tw-w-[calc(50%_-_40px)]">
               <div className="tw-text-[#000] tw-text-[20px] tw-font-[700] tw-pt-10">
-                dụng cụ bảo quản - hộp mica
+                Dụng cụ bảo quản - hộp mica
               </div>
               <ul className="ul-info">
                 <li>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                  Hộp trưng bày sản phẩm có nhiệm vụ bảo quản, bày trí các sản phẩm trong đời sống như: đồ chơi, mô hình, quà tặng,… Hộp chụp sản phẩm có thể được làm từ nhiều loại vật liệu như: mica, thủy tinh hay gỗ.
                 </li>
                 <li>
-                  It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged.
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of Lorem Ipsum.
+                  Hộp mica trưng bày sản phẩm được gia công từ nhựa acrylic (mica) nên có nhiều ưu điểm nổi trội như: độ bền cao, trọng lượng nhẹ, chống xước,… Do mica là chất liệu dễ tạo hình nên hộp úp sản phẩm mica có nhiều kích thước, màu sắc và kiểu dáng khác nhau.
+
                 </li>
               </ul>
             </div>

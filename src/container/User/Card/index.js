@@ -142,7 +142,7 @@ const Card = () => {
               />
               <div className="tw-p-6 tw-bg-[#33322C] tw-rounded-[16px] tw-mt-10">
                 <div className="tw-text-white tw-text-center tw-text-[24px] tw-font-[700] tw-mb-6">
-                  Thông tin người nhận
+                  Thông tin bổ sung
                 </div>
                 <Formik
                   initialValues={initialValues}
@@ -155,7 +155,7 @@ const Card = () => {
                       <div className="tw-bg-white tw-rounded-[10px] tw-p-6 tw-flex tw-items-center  tw-flex-col">
                         <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
                           <div className="tw-w-full">
-                            <div className="tw-mb-1">Địa chỉ nhận hàng</div>
+                            <div className="tw-mb-1">Địa chỉ nhận hàng - ghi chú</div>
                             <TextArea
                               name="address"
                               value={values.address}
@@ -163,7 +163,7 @@ const Card = () => {
                                 setFieldValue("address", e.target.value);
                               }}
                               rows={5}
-                              placeholder="Nhập địa chỉ nhận hàng"
+                              placeholder="Nhập địa chỉ nhận hàng - ghi chú"
                             />
                             <ErrorMessage
                               className="invalid"

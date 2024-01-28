@@ -16,6 +16,7 @@ import {
   ExperimentOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
+import notfound from "../../../assets/images/404.svg";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -211,17 +212,35 @@ const item1 = [
       key: "2",
       label: "Đặt hàng thanh toán",
       children: (
-          <div className="tw-p-6 container 3xl:tw-my-0 3xl:tw-min-h-[calc(100vh_-_476px)] tw-text-white">
-            Đặt hàng thanh toán
-          </div>
+            <div className="tw-my-12  tw-w-full">
+              <div className="tw-flex tw-items-center tw-justify-center tw-flex-col tw-p-[80px] tw-bg-[#1C1B15] ">
+                <img
+                    src={notfound}
+                    alt="not found"
+                    className="tw-w-[200px] tw-h-[200px]"
+                ></img>
+                <div className="tw-text-[20px] tw-text-white tw-font-[700] tw-mb-6">
+                  Không tìm thấy trang này!
+                </div>
+              </div>
+            </div>
       ),
     },
     {
       key: "3",
       label: "Chính sách vận chuyển",
       children: (
-          <div className="tw-p-6 container 3xl:tw-my-0 3xl:tw-min-h-[calc(100vh_-_476px)] tw-text-white">
-            Chính sách vận chuyển
+          <div className="tw-my-12  tw-w-full">
+            <div className="tw-flex tw-items-center tw-justify-center tw-flex-col tw-p-[80px] tw-bg-[#1C1B15] ">
+              <img
+                  src={notfound}
+                  alt="not found"
+                  className="tw-w-[200px] tw-h-[200px]"
+              ></img>
+              <div className="tw-text-[20px] tw-text-white tw-font-[700] tw-mb-6">
+                Không tìm thấy trang này!
+              </div>
+            </div>
           </div>
       ),
     },
@@ -229,8 +248,17 @@ const item1 = [
       key: "4",
       label: "Chính sách đổi trả",
       children: (
-          <div className="tw-p-6 container 3xl:tw-my-0 3xl:tw-min-h-[calc(100vh_-_476px)] tw-text-white">
-            Chính sách đổi trả
+          <div className="tw-my-12  tw-w-full">
+            <div className="tw-flex tw-items-center tw-justify-center tw-flex-col tw-p-[80px] tw-bg-[#1C1B15] ">
+              <img
+                  src={notfound}
+                  alt="not found"
+                  className="tw-w-[200px] tw-h-[200px]"
+              ></img>
+              <div className="tw-text-[20px] tw-text-white tw-font-[700] tw-mb-6">
+                Không tìm thấy trang này!
+              </div>
+            </div>
           </div>
       ),
     },

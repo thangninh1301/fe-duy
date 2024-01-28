@@ -43,60 +43,97 @@ const Register = () => {
         {({ values, setFieldValue, handleSubmit }) => {
           return (
             <div className="tw-bg-[#1C1B15] tw-flex tw-items-center tw-justify-center tw-my-12 !tw-min-h-[calc(100vh_-_500px)]">
-              <div className="tw-bg-white tw-w-[500px] tw-rounded-[10px] tw-shadow-2xl tw-px-6 tw-py-12 tw-flex tw-items-center  tw-flex-col">
-                <div className="tw-text-center tw-text-[24px] tw-font-[700] tw-mb-10">
-                  Đăng ký
+                <div
+                    className="tw-bg-white tw-w-[500px] tw-rounded-[10px] tw-shadow-2xl tw-px-6 tw-py-12 tw-flex tw-items-center  tw-flex-col">
+                    <div className="tw-text-center tw-text-[24px] tw-font-[700] tw-mb-10">
+                        Đăng ký
+                    </div>
+                    <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
+                        <div className="tw-w-full">
+                            <div className="tw-mb-1">Tên đăng nhập</div>
+                            <Input
+                                name="user_name"
+                                value={values.user_name || ""}
+                                onChange={(event) => {
+                                    setFieldValue("user_name", event.target.value);
+                                }}
+                                placeholder="Nhập tên đăng nhập"
+                            />
+                            <ErrorMessage
+                                className="invalid"
+                                name="user_name"
+                                component="div"
+                            />
+                        </div>
+                    </div>
+                    <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
+                        <div className="tw-w-full">
+                            <div className="tw-mb-1">Số điện thoại</div>
+                            <Input
+                                name="phone"
+                                value={values.phone || ""}
+                                onChange={(event) => {
+                                    setFieldValue("phone", event.target.value);
+                                }}
+                                placeholder="Số điện thoại"
+                            />
+                            <ErrorMessage
+                                className="invalid"
+                                name="phone"
+                                component="div"
+                            />
+                        </div>
+                    </div>
+                    <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
+                        <div className="tw-w-full">
+                            <div className="tw-mb-1">Email</div>
+                            <Input
+                                name="email"
+                                value={values.email || ""}
+                                onChange={(event) => {
+                                    setFieldValue("email", event.target.value);
+                                }}
+                                placeholder="Email"
+                            />
+                            <ErrorMessage
+                                className="invalid"
+                                name="email"
+                                component="div"
+                            />
+                        </div>
+                    </div>
+                    <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-8">
+                        <div className="tw-w-full">
+                            <div className="tw-mb-1">Mật khẩu</div>
+                            <Input.Password
+                                value={values.password || ""}
+                                onChange={(event) => {
+                                    setFieldValue("password", event.target.value);
+                                }}
+                                visibilityToggle={{
+                                    visible: passwordVisible,
+                                    onVisibleChange: setPasswordVisible,
+                                }}
+                                name="password"
+                                placeholder="Nhập mật khẩu"
+                            />
+                            <ErrorMessage
+                                className="invalid"
+                                name="password"
+                                component="div"
+                            />
+                        </div>
+                    </div>
+                    <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
+                        <button
+                            onClick={() => handleSubmit(values)}
+                            className="tw-w-full tw-flex tw-items-center tw-justify-center tw-p-2 tw-bg-[#DC1814] tw-border-[#DC1814] tw-border-0 tw-text-white tw-font-[500] tw-rounded-[8px]"
+                            type="submit"
+                        >
+                            Đăng ký
+                        </button>
+                    </div>
                 </div>
-                <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
-                  <div className="tw-w-full">
-                    <div className="tw-mb-1">Tên đăng nhập</div>
-                    <Input
-                      name="user_name"
-                      value={values.user_name || ""}
-                      onChange={(event) => {
-                        setFieldValue("user_name", event.target.value);
-                      }}
-                      placeholder="Nhập tên đăng nhập"
-                    />
-                    <ErrorMessage
-                      className="invalid"
-                      name="user_name"
-                      component="div"
-                    />
-                  </div>
-                </div>
-                <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-8">
-                  <div className="tw-w-full">
-                    <div className="tw-mb-1">Mật khẩu</div>
-                    <Input.Password
-                      value={values.password || ""}
-                      onChange={(event) => {
-                        setFieldValue("password", event.target.value);
-                      }}
-                      visibilityToggle={{
-                        visible: passwordVisible,
-                        onVisibleChange: setPasswordVisible,
-                      }}
-                      name="password"
-                      placeholder="Nhập mật khẩu"
-                    />
-                    <ErrorMessage
-                      className="invalid"
-                      name="password"
-                      component="div"
-                    />
-                  </div>
-                </div>
-                <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
-                  <button
-                    onClick={() => handleSubmit(values)}
-                    className="tw-w-full tw-flex tw-items-center tw-justify-center tw-p-2 tw-bg-[#DC1814] tw-border-[#DC1814] tw-border-0 tw-text-white tw-font-[500] tw-rounded-[8px]"
-                    type="submit"
-                  >
-                    Đăng ký
-                  </button>
-                </div>
-              </div>
             </div>
           );
         }}
