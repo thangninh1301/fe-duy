@@ -186,7 +186,7 @@ const Customer = () => {
                       onChange={(event) => {
                         setFieldValue("phone", event.target.value);
                       }}
-                      placeholder="Nhập tên sản phẩm"
+                      placeholder="Cập nhật số điện thoại"
                     />
                     <ErrorMessage
                       className="invalid"
@@ -205,7 +205,7 @@ const Customer = () => {
                       onChange={(event) => {
                         setFieldValue("email", event.target.value);
                       }}
-                      placeholder="Nhập tên sản phẩm"
+                      placeholder="Cập nhật email"
                     />
                     <ErrorMessage
                       className="invalid"
