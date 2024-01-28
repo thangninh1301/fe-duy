@@ -242,6 +242,23 @@ function* OrderProduct(data) {
 function* FetchOderAdmin() {
   try {
     const response = yield call(() =>
+      adminRequest.callApi(ConstantAPI.order.GET_ALL_ADMIN, null, null)
+    );
+
+    if (response?.success === true) {
+      yield put(setDataOrder(response?.data?.row));
+    } else {
+      message.error(response.reason);
+    }
+    yield put(setLoading(false));
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+function* FetchOderUser() {
+  try {
+    const response = yield call(() =>
       configService.callApi(ConstantAPI.order.GET_ALL, null, null)
     );
 
@@ -431,6 +448,7 @@ function* rootSaga() {
   yield takeEvery("DELETE_CARD", DeleteCard);
   yield takeEvery("ORDER_PRODUCT", OrderProduct);
   yield takeEvery("FETCH_ORDER_ADMIN", FetchOderAdmin);
+  yield takeEvery("FETCH_ORDER_USER", FetchOderAdmin);
   yield takeEvery("FETCH_ORDER_DETAIL", FetchOderDetail);
   yield takeEvery("GEN_QRCODE", GenQRCode);
   yield takeEvery("DELETE_PRODUCT", DeleteProduct);
@@ -439,6 +457,7 @@ function* rootSaga() {
   yield takeEvery("FETCH_CUSTOMER_DETAIL", FetchProfile);
   yield takeEvery("UPDATE_CUSTOMER", updateCustomer);
    yield takeEvery("DELETE_CUSTOMER", DeleteCustomer);
+   yield takeEvery("FETCH_ORDER_USER", FetchOderUser);
 }
 
 export default rootSaga;

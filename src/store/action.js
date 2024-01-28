@@ -81,6 +81,10 @@ export const FetchOderAdmin = () => ({
   type: "FETCH_ORDER_ADMIN",
 });
 
+export const FetchOderUsser = () => ({
+  type: "FETCH_ORDER_USER",
+});
+
 export const setDataOrder = (data) => ({
   type: "SET_ORDER_ADMIN",
   payload: data,

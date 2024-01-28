@@ -78,7 +78,7 @@ const OrderUser = () => {
   }, [listOrder]);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_ORDER_ADMIN" });
+    dispatch({ type: "FETCH_ORDER_USER" });
   }, [dispatch]);
   return (
     <LauoutDefault type={2}>

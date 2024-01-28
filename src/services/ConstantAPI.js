@@ -58,6 +58,10 @@ export const ConstantAPI = {
       url: "/api/v1/order",
       method: "GET",
     },
+    GET_ALL_ADMIN: {
+      url: "/api/v1/admin/order",
+      method: "GET",
+    },
     GET_PRODUCT_BY_ID: {
       url: "/api/v1/order",
       method: "GET",
