@@ -13,10 +13,10 @@ import {
 } from "antd";
 import productImage from "../../../assets/images/productImage.png";
 import {
-  COUNTRY_LIST,
-  SIZE_LIST,
-  TYPE_LIST,
-  PRICE_LIST,
+    COUNTRY_LIST,
+    SIZE_LIST,
+    TYPE_LIST,
+    PRICE_LIST, BRANCH_LIST,
 } from "../../../constants/common";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Formik } from "formik";
@@ -254,7 +254,7 @@ const ProductUser = () => {
                           onChange={(e) => setFieldValue("type", e)}
                       >
                           <Space className="tw-px-3 tw-w-full" direction="vertical">
-                              {COUNTRY_LIST.map((i) => {
+                              {BRANCH_LIST.map((i) => {
                                   return (
                                       <div
                                           key={i.value}
