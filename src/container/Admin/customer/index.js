@@ -36,7 +36,7 @@ const Customer = () => {
     else if (total > 3000000) return "Vàng";
     else if (total > 1000000) return "Bạc";
     else if (total > 100000) return "Đồng";
-    else return "Sắt";
+    else return "---";
   };
 
 
