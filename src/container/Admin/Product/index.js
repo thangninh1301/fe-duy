@@ -436,7 +436,7 @@ const Product = () => {
                     </div>
                     <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-my-4">
                       <Button type="default" onClick={handleCancel}>
-                        Huỷ bỏ
+                        Huỷ
                       </Button>
                       <Button
                         onClick={() => handleSubmit(values)}
@@ -646,7 +646,7 @@ const Product = () => {
                     </div>
                     <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-my-4">
                       <Button type="default" onClick={handleCancel}>
-                        Huỷ bỏ
+                        Huỷ
                       </Button>
                       <Button
                         onClick={() => handleSubmitUpdate(values)}

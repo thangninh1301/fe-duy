@@ -7,7 +7,6 @@ import * as Yup from "yup";
 import { Formik, ErrorMessage } from "formik";
 import {
   EditOutlined,
-  EyeOutlined,
   DeleteOutlined,
   ExclamationCircleOutlined,
 } from "@ant-design/icons";
@@ -176,7 +175,7 @@ const Customer = () => {
               <div className="tw-bg-white tw-rounded-[10px] tw-px-6 tw-pt-6 tw-flex tw-items-center  tw-flex-col">
                 <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
                   <div className="tw-w-full">
-                    <div className="tw-mb-1">Số điện thoại</div>
+                    <div className="tw-mb-1 tw-text-[#000]">Số điện thoại</div>
                     <Input
                       name="phone"
                       value={values.phone || ""}
@@ -195,7 +194,7 @@ const Customer = () => {
 
                 <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
                   <div className="tw-w-full">
-                    <div className="tw-mb-1">Email</div>
+                    <div className="tw-mb-1 tw-text-[#000]">Email</div>
                     <Input
                       name="email"
                       value={values.email || ""}
@@ -211,9 +210,50 @@ const Customer = () => {
                     />
                   </div>
                 </div>
+                <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
+                  <div className="tw-w-full">
+                    <div className="tw-mb-1 tw-text-[#000]">Tên</div>
+                    <Input
+                      disabled={true}
+                      name="full_name"
+                      value={values.full_name || ""}
+                      onChange={(event) => {
+                        setFieldValue("full_name", event.target.value);
+                      }}
+                    />
+                    <ErrorMessage
+                      className="invalid"
+                      name="full_name"
+                      component="div"
+                    />
+                  </div>
+                </div>
+                <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
+                  <div className="tw-w-full">
+                    <div className="tw-mb-1 tw-text-[#000]">Tên đăng nhập</div>
+                    <Input
+                      disabled={true}
+                      name="user_name"
+                      value={values.user_name || ""}
+                      onChange={(event) => {
+                        setFieldValue("user_name", event.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="tw-flex tw-items-center tw-justify-start tw-w-full tw-mb-3">
+                  <div className="tw-w-full">
+                    <div className="tw-mb-1 tw-text-[#000]">Rank</div>
+                    <Input
+                      disabled={true}
+                      name="user_name"
+                      value={rank(values?.total_payment) || ""}
+                    />
+                  </div>
+                </div>
                 <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-my-4">
                   <Button type="default" onClick={handleCancel}>
-                    Huỷ bỏ
+                    Huỷ
                   </Button>
                   <Button
                     onClick={() => handleSubmit(values)}

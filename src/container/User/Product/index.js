@@ -479,7 +479,7 @@ const ProductUser = () => {
                 </div>
                 <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-mb-4">
                   <Button type="default" onClick={handleCancel}>
-                    Huỷ bỏ
+                    Huỷ
                   </Button>
                   <Button
                     onClick={() => handleSubmit(values)}
