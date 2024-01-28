@@ -66,7 +66,7 @@ const Customer = () => {
         render: (value, item) => <div>{item?.user_name}</div>,
       },
       {
-        title: "Tên số điện thoại",
+        title: "Số điện thoại",
         dataIndex: "Nameorder",
         render: (value, item) => <div>{item?.phone}</div>,
       },
