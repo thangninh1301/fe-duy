@@ -97,9 +97,6 @@ const Customer = () => {
             >
               <EditOutlined />
             </div>
-            <Link className="tw-mr-3" to={`/admin/customer/${item?.id}`}>
-              <EyeOutlined></EyeOutlined>
-            </Link>
             <div onClick={() => showModalConfirm(item.id)}>
               <DeleteOutlined />
             </div>
