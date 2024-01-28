@@ -146,7 +146,7 @@ const Customer = () => {
           {customerList?.length > 0 ? (
             <Table
               rowKey={(record) =>
-                record?.order?.id ? record?.order?.id : new Date().getTime()
+                record?.id ? record?.id : new Date().getTime()
               }
               columns={columns}
               dataSource={customerList}
