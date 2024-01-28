@@ -225,7 +225,7 @@ const Product = () => {
         <div className="tw-p-6 container">
           <div className="tw-flex tw-items-center tw-justify-between tw-my-6">
             <div className="tw-text-[20px] tw-font-[700]">Sản phẩm</div>
-            <Button onClick={showModal} type="primary">
+            <Button onClick={showModal} type="primary" >
               Thêm sản phẩm
             </Button>
           </div>
@@ -650,7 +650,7 @@ const Product = () => {
                       </Button>
                       <Button
                         onClick={() => handleSubmitUpdate(values)}
-                        className="tw-ml-3"
+                        className="tw-ml-3 red-button"
                         type="primary"
                       >
                         Cập nhật

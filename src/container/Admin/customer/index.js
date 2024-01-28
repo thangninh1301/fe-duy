@@ -232,9 +232,9 @@ const Customer = () => {
                   <Button type="default" onClick={handleCancel}>
                     Huỷ
                   </Button>
-                  <Button id="red-button"
+                  <Button
                     onClick={() => handleSubmit(values)}
-                    className="tw-ml-3"
+                    className="tw-ml-3 red-button"
                     type="primary"
                   >
                     Cập nhật

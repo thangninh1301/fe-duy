@@ -483,7 +483,7 @@ const ProductUser = () => {
                   </Button>
                   <Button
                     onClick={() => handleSubmit(values)}
-                    className="tw-ml-3"
+                    className="tw-ml-3 red-button"
                     type="primary"
                   >
                     Lọc
