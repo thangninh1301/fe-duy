@@ -229,7 +229,7 @@ const Customer = () => {
                   </div>
                 </div>
                 <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-my-4">
-                  <Button type="default" onClick={handleCancel}>
+                  <Button id="red-button" type="default" onClick={handleCancel}>
                     Huỷ
                   </Button>
                   <Button
