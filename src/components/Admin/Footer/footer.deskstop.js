@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../assets/images/sovietmodel-new.svg";
+import logo from "../../../assets/images/sovietmodel.svg";
 import fb from "../../../assets/images/facebook.svg";
 import laz from "../../../assets/images/lazada.svg";
 import shopee from "../../../assets/images/shopee.svg";

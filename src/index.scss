@@ -157,3 +157,25 @@ a{
 #last-child-header{
   border-right: none;
 }
+
+#product-image-detail{
+  width: 560px;
+  height: 560px;
+}
+
+.product-details{
+  .tw-text-white{
+    font-size: 120%;
+  }
+
+}
+
+.bigger-font{
+  li{
+    font-size: 130%;
+  }
+}
+
+.remove-marker{
+  list-style-type: none;
+}

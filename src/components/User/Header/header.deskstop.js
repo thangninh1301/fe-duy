@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import HeaderWrapper from "./header.styles";
-import logo from "../../../assets/images/sovietmodel-new.svg";
+import logo from "../../../assets/images/sovietmodel.svg";
 import giohang from "../../../assets/images/giohang.svg";
 import message from "../../../assets/images/message.svg";
 import { Link } from "react-router-dom";

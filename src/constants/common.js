@@ -18,14 +18,14 @@ export const COUNTRY_LIST = [
 ];
 
 export const SIZE_LIST = [
-  { value: "35", label: "35" },
-  { value: "43", label: "43" },
-  { value: "48", label: "48" },
-  { value: "72", label: "72" },
-  { value: "100", label: "100" },
-  { value: "144", label: "144" },
-  { value: "350", label: "350" },
-  { value: "700", label: "700" },
+  { value: "35", label: "1/35" },
+  { value: "43", label: "1/43" },
+  { value: "48", label: "1/48" },
+  { value: "72", label: "1/72" },
+  { value: "100", label: "1/100" },
+  { value: "144", label: "1/144" },
+  { value: "350", label: "1/350" },
+  { value: "700", label: "1/700" },
 ];
 
 export const TYPE_LIST = [

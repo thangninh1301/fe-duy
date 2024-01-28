@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import HeaderWrapper from "./header.styles";
-import logo from "../../../assets/images/sovietmodel-new.svg";
+import logo from "../../../assets/images/sovietmodel.svg";
 import { Dropdown, Space, Avatar } from "antd";
 import { DownOutlined, UserOutlined } from "@ant-design/icons";
 import { TOKEN_ADMIN } from "../../../constants/index";

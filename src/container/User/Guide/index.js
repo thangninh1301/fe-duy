@@ -29,19 +29,11 @@ const Guide = () => {
               </div>
               <ul className="ul-info">
                 <li>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                  Kìm cắt mô hình Tamiya là vật dụng không thể thiếu cho người chơi mô hình lắp ráp. Kìm Tamiya với lưỡi cắt siêu mỏng giúp cho việc cắt mô hình trở nên đơn giản.
                 </li>
                 <li>
-                  It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged.
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of Lorem Ipsum.
+                  Dùng cho công đoạn tách các chi tiết, cắt nhựa thừa còn sót lại trên các chi tiết. Thiết kế nhỏ gọn trong lòng bàn tay giúp tăng khả năng linh hoạt. Mũi kìm Tamiya nhỏ gọn giúp dễ dàng cắt, tách những chi tiết nhỏ.
+
                 </li>
               </ul>
             </div>

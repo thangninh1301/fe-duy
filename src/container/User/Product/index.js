@@ -251,26 +251,46 @@ const ProductUser = () => {
                         Hãng
                       </span>
                     </div>
-                    <Radio.Group
-                      className="tw-block"
-                      name="brand"
-                      onChange={(e) => setFieldValue("brand", e.target.value)}
-                      value={values.brand}
-                    >
-                      <Space className="tw-px-3" direction="vertical">
-                        {BRANCH_LIST.map((i, index) => {
-                          return (
-                            <Radio
-                              className="!tw-text-[#ffffffcc]"
-                              key={index}
-                              value={i.value}
-                            >
-                              {i.label}
-                            </Radio>
-                          );
-                        })}
-                      </Space>
-                    </Radio.Group>
+                      <Checkbox.Group
+                          style={{ width: "100%" }}
+                          onChange={(e) => setFieldValue("type", e)}
+                      >
+                          <Space className="tw-px-3 tw-w-full" direction="vertical">
+                              {TYPE_LIST.map((i) => {
+                                  return (
+                                      <div
+                                          key={i.value}
+                                          className="tw-flex tw-w-full tw-justify-between"
+                                      >
+                                          <div className="tw-text-[#ffffffcc]">
+                                              {i.label}
+                                          </div>
+                                          <Checkbox name="type" value={i.value}></Checkbox>
+                                      </div>
+                                  );
+                              })}
+                          </Space>
+                      </Checkbox.Group>
+                    {/*<Radio.Group*/}
+                    {/*  className="tw-block"*/}
+                    {/*  name="brand"*/}
+                    {/*  onChange={(e) => setFieldValue("brand", e.target.value)}*/}
+                    {/*  value={values.brand}*/}
+                    {/*>*/}
+                    {/*  <Space className="tw-px-3" direction="vertical">*/}
+                    {/*    {BRANCH_LIST.map((i, index) => {*/}
+                    {/*      return (*/}
+                    {/*        <Radio*/}
+                    {/*          className="!tw-text-[#ffffffcc]"*/}
+                    {/*          key={index}*/}
+                    {/*          value={i.value}*/}
+                    {/*        >*/}
+                    {/*          {i.label}*/}
+                    {/*        </Radio>*/}
+                    {/*      );*/}
+                    {/*    })}*/}
+                    {/*  </Space>*/}
+                    {/*</Radio.Group>*/}
                   </div>
                   <div className="tw-w-1/3 tw-px-3">
                     <div className=" tw-mb-3 tw-flex">
@@ -344,7 +364,7 @@ const ProductUser = () => {
                         />
                       </svg>
                       <span className="tw-text-[14px] tw-font-[500] tw-ml-3">
-                        Kích thước
+                        Tỷ lệ
                       </span>
                     </div>
 
@@ -387,7 +407,7 @@ const ProductUser = () => {
                       </svg>
 
                       <span className="tw-text-[14px] tw-font-[500] tw-ml-3">
-                        Giá cả
+                        Giá tiền
                       </span>
                     </div>
 
@@ -430,7 +450,7 @@ const ProductUser = () => {
                         />
                       </svg>
                       <span className="tw-text-[14px] tw-font-[500] tw-ml-3">
-                        Đất nước
+                        Quốc gia
                       </span>
                     </div>
 
