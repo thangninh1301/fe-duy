@@ -229,10 +229,10 @@ const Customer = () => {
                   </div>
                 </div>
                 <div className="tw-flex tw-items-center tw-justify-end tw-w-full tw-my-4">
-                  <Button id="red-button" type="default" onClick={handleCancel}>
+                  <Button type="default" onClick={handleCancel}>
                     Huỷ
                   </Button>
-                  <Button
+                  <Button id="red-button"
                     onClick={() => handleSubmit(values)}
                     className="tw-ml-3"
                     type="primary"
