@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import HeaderWrapper from "./header.styles";
-import logo from "../../../assets/images/sovietmodel.svg";
+import logo from "../../../assets/images/sovietmodel-new.svg";
 import giohang from "../../../assets/images/giohang.svg";
 import message from "../../../assets/images/message.svg";
 import { Link } from "react-router-dom";
@@ -138,7 +138,7 @@ const Header = () => {
           </li>
           <li className="tw-flex tw-items-center tw-justify-center tw-px-4 2xl:tw-px-[36px] tw-border-0 tw-border-r-[1px] tw-border-solid tw-border-[#fff] tw-py-1 tw-text-[#fff] tw-cursor-pointer">
             <Link
-              to="/news"
+              to="/recommend"
               className={`tw-text-white tw-text-[16px] ${
                 location?.pathname === "/news" ? "tw-font-[700]" : ""
               }`}
@@ -156,7 +156,7 @@ const Header = () => {
               Hỗ trợ Trực tuyến
             </Link>
           </li>
-          <li className="tw-flex tw-items-center tw-justify-center tw-px-4 2xl:tw-px-[36px] tw-border-0 tw-border-r-[1px] tw-border-solid tw-border-[#fff] tw-py-1 tw-text-[#fff] tw-cursor-pointer">
+          <li id="last-child-header" className="tw-flex tw-items-center tw-justify-center tw-px-4 2xl:tw-px-[36px] tw-border-0 tw-border-r-[1px] tw-border-solid tw-border-[#fff] tw-py-1 tw-text-[#fff] tw-cursor-pointer">
             <Link
               to="/recommend"
               className={`tw-text-white tw-text-[16px] ${

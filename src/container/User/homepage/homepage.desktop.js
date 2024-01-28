@@ -27,6 +27,17 @@ import blog11 from "../../../assets/images/homepage/blog11.png";
 import blog12 from "../../../assets/images/homepage/blog12.png";
 import mobile from "../../../assets/images/silder/mobile.png";
 
+import blog101 from "../../../assets/images/homepage/blog101.png";
+import blog102 from "../../../assets/images/homepage/blog102.png";
+import blog103 from "../../../assets/images/homepage/blog103.png";
+import blog104 from "../../../assets/images/homepage/blog104.png";
+import blog105 from "../../../assets/images/homepage/blog105.png";
+import blog106 from "../../../assets/images/homepage/blog106.png";
+
+import blog107 from "../../../assets/images/homepage/blog107.png";
+import blog108 from "../../../assets/images/homepage/blog108.png";
+import blog109 from "../../../assets/images/homepage/blog109.png";
+import blog110 from "../../../assets/images/homepage/blog110.png";
 const HomePage = ({ type = 1 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -190,32 +201,28 @@ const HomePage = ({ type = 1 }) => {
             <div className="tw-text-center tw-mb-4 tw-mt-0 tw-text-[36px] tw-font-[700] tw-text-white">
               Bộ sưu tập được đề xuất
             </div>
-            <div className="tw-text-center tw-mb-8 tw-text-[16px] tw-font-[400] tw-text-white">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </div>
             <div className="tw-p-6 container tw-flex tw-flex-wrap tw-w-full tw-mb-10">
-              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3" style={{padding: 7}}>
                 <img
                   className="tw-w-full hoverable-card"
                   alt="blog"
-                  src={blog2}
+                  src={blog101}
                 />
               </div>
-              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
-                <img className="tw-w-full" alt="blog" src={blog2} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3"  style={{padding: 7}}>
+                <img className="tw-w-full hoverable-card" alt="blog" src={blog102} />
               </div>
-              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
-                <img className="tw-w-full" alt="blog" src={blog3} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3" style={{padding: 7}}>
+                <img className="tw-w-full hoverable-card" alt="blog" src={blog103} />
               </div>
-              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
-                <img className="tw-w-full" alt="blog" src={blog4} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3" style={{padding: 7}}>
+                <img className="tw-w-full hoverable-card" alt="blog" src={blog104} />
               </div>
-              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
-                <img className="tw-w-full" alt="blog" src={blog5} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3" style={{padding: 7}}>
+                <img className="tw-w-full hoverable-card" alt="blog" src={blog105} />
               </div>
-              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3">
-                <img className="tw-w-full" alt="blog" src={blog6} />
+              <div className="tw-w-[calc(33%_-_24px)] tw-min-w-[300px] tw-max-w-[500px] tw-mr-3" style={{padding: 7}}>
+                <img className="tw-w-full hoverable-card" alt="blog" src={blog106} />
               </div>
             </div>
           </div>
@@ -233,17 +240,17 @@ const HomePage = ({ type = 1 }) => {
               <div className=" tw-pt-[50px]">
                 <img
                   alt="blog"
-                  src={blog7}
+                  src={blog107}
                   className="tw-h-[640px] tw-rounded-[16px]"
                 />
               </div>
-              <div className="tw-text-[48px] tw-font-[700] tw-mt-6">
+              <div className="tw-text-[48px] tw-font-[700] tw-mt-6" id="bo-suu-tap-khi-tai">
                 Bộ sưu tập khí tài theo từng thời kỳ
               </div>
             </div>
             <div className="tw-w-1/2 tw-pl-3">
-              <img alt="blog" className="tw-w-full" src={blog8} />
-              <img alt="blog" className="tw-w-full tw-pl-3" src={blog9} />
+              <img alt="blog" className="tw-w-full" src={blog108} />
+              <img alt="blog" className="tw-w-full tw-pl-3" src={blog109} />
             </div>
           </div>
           <div className="tw-mt-10 container tw-flex tw-justify-center tw-h-[275px]">
@@ -258,10 +265,6 @@ const HomePage = ({ type = 1 }) => {
           <div>
             <div className="tw-text-center tw-mb-4 tw-mt-0 tw-text-[36px] tw-font-[700] tw-text-white">
               Sản phẩm theo nhãn hàng được Đề xuất
-            </div>
-            <div className="tw-text-center tw-mb-10 tw-text-[16px] tw-font-[400] tw-text-white">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
             </div>
             <div className="container tw-mb-10 tw-flex">
               <div className="tw-w-[60%] tw-flex tw-items-center tw-justify-center">
@@ -303,7 +306,7 @@ const HomePage = ({ type = 1 }) => {
                 />
                 <img
                   alt="blog"
-                  src={blog11}
+                  src={blog110}
                   className="tw-w-[424px] tw-h-[400px]"
                 />
               </div>

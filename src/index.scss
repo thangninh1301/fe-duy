@@ -141,3 +141,19 @@ a{
     color:#FFF!important;
   }
 }
+
+#bo-suu-tap-khi-tai{
+  -webkit-text-stroke: 1px white;
+  color: #1C1B15;
+  font-size: 80px;
+  text-shadow:
+          3px 3px 0 #000,
+          -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;
+}
+
+#last-child-header{
+  border-right: none;
+}
