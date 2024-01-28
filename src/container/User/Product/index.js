@@ -251,7 +251,7 @@ const ProductUser = () => {
                     </div>
                       <Checkbox.Group
                           style={{ width: "100%" }}
-                          onChange={(e) => setFieldValue("type", e)}
+                          onChange={(e) => setFieldValue("brand", e)}
                       >
                           <Space className="tw-px-3 tw-w-full" direction="vertical">
                               {BRANCH_LIST.map((i) => {
