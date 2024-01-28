@@ -197,7 +197,7 @@ const ProductUser = () => {
                     </div>
                     <div className="tw-flex tw-items-center tw-justify-between">
                       <div className="tw-text-[#FFC43F] tw-text-[18px] tw-font-[700] tw-leading-[36px]">
-                        {i.price_high}VND
+                        {i.price_each}VND
                       </div>
                       <div className="tw-text-white ">
                         SL:<span>{i.product_quantity}</span>
