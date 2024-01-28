@@ -78,16 +78,6 @@ const Header = () => {
         <ul className="tw-bg-[#DC1814] tw-flex tw-items-center tw-justify-center !tw-m-0 tw-py-4 !tw-px-0">
           <li className="tw-flex tw-items-center tw-justify-center tw-px-4 2xl:tw-px-[36px] tw-border-0 tw-border-r-[1px] tw-border-solid tw-border-[#fff] tw-py-1 tw-text-[#fff] tw-cursor-pointer">
             <Link
-                to="/admin"
-                className={`tw-text-white tw-text-[16px] ${
-                    location?.pathname === "/admin" ? "tw-font-[700]" : ""
-                }`}
-            >
-              Trang chủ
-            </Link>
-          </li>
-          <li className="tw-flex tw-items-center tw-justify-center tw-px-4 2xl:tw-px-[36px] tw-border-0 tw-border-r-[1px] tw-border-solid tw-border-[#fff] tw-py-1 tw-text-[#fff] tw-cursor-pointer">
-            <Link
               to="/admin/product"
               className={`tw-text-white tw-text-[16px] ${
                 location?.pathname === "/admin/product" ? "tw-font-[700]" : ""
