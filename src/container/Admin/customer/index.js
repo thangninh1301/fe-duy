@@ -81,7 +81,7 @@ const Customer = () => {
         render: (value, item) => <div>{item?.email}</div>,
       },
       {
-        title: "Rank",
+        title: "Thành viên hạng",
         dataIndex: "order",
         render: (value, item) => <div>{rank(item?.total_payment)}</div>,
       },
