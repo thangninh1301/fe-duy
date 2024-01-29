@@ -24,9 +24,9 @@ const ProductDetail = () => {
   const token = getToken();
   const isAuthenticated = useMemo(() => {
     if (token) {
-      return false;
-    } else {
       return true;
+    } else {
+      return false;
     }
   }, [token]);
 
@@ -193,35 +193,38 @@ const ProductDetail = () => {
                     <img alt="momo" src={momo} />
                   </div>
                 </div>
-                <ul className="ul-info  bigger-font">
-                  <li>Số lượng mua</li>
-                </ul>
-                <div className="tw-mb-6">
-                  <InputNumber
-                    min={1}
-                    max={10}
-                    defaultValue={quanlity}
-                    onChange={(e) => {
-                      setQuanlity(e);
-                    }}
-                  />
-                </div>
-                <div className="tw-flex tw-items-center">
-                  <Button
-                    disabled={isAuthenticated}
-                    onClick={() => handleSubmit()}
-                    className="tw-flex tw-items-center tw-justify-center tw-text-white tw-bg-[#ffffff1a] tw-border-[#ffffff1a] tw-mr-3"
-                  >
-                    <ShoppingCartOutlined />
-                    Thêm vào giỏ hàng
-                  </Button>
-                  <Button
-                    disabled={isAuthenticated}
-                    className="tw-flex tw-items-center tw-justify-center tw-text-white tw-bg-[#DC1814] tw-border-[#DC1814]"
-                  >
-                    Mua ngay
-                  </Button>
-                </div>
+                {isAuthenticated === true && (
+                  <>
+                    <ul className="ul-info  bigger-font">
+                      <li>Số lượng mua</li>
+                    </ul>
+                    <div className="tw-mb-6">
+                      <InputNumber
+                        min={1}
+                        max={10}
+                        defaultValue={quanlity}
+                        onChange={(e) => {
+                          setQuanlity(e);
+                        }}
+                      />
+                    </div>
+                  </>
+                )}
+
+                {isAuthenticated === true && (
+                  <div className="tw-flex tw-items-center">
+                    <Button
+                      onClick={() => handleSubmit()}
+                      className="tw-flex tw-items-center tw-justify-center tw-text-white tw-bg-[#ffffff1a] tw-border-[#ffffff1a] tw-mr-3"
+                    >
+                      <ShoppingCartOutlined />
+                      Thêm vào giỏ hàng
+                    </Button>
+                    <Button className="tw-flex tw-items-center tw-justify-center tw-text-white tw-bg-[#DC1814] tw-border-[#DC1814]">
+                      Mua ngay
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

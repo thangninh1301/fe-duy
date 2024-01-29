@@ -29,11 +29,11 @@ const Card = () => {
       {
         title: "Ảnh",
         dataIndex: "image",
-        render: () => (
+        render: (value, item) => (
           <img
             className="tw-w-[100px] tw-h-[100px]"
             alt="product"
-            src={productImage}
+            src={item?.image_url || productImage}
           />
         ),
       },
