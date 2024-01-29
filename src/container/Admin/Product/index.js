@@ -64,11 +64,11 @@ const Product = () => {
   };
 
   const onChange = ({ fileList: newFileList }) => {
-    setFileList(newFileList);
+    console.log('test')
   };
   const onRemove = (file) => {
     // Handle file removal
-    setFileList((prevList) => prevList.filter((item) => item.uid !== file.uid));
+    setFileList([]);
   };
 
   const customRequest = async ({ file, onSuccess, onError }) => {
@@ -77,6 +77,14 @@ const Product = () => {
     });
     if (temp) {
       onSuccess();
+        setFileList([
+          {
+            uid: "-1",
+            name: "image.png",
+            status: "done",
+            url: `https://thang.edtexco.com/images/${temp?.data?.name}`,
+          },
+        ]);
       setImageUrl(`https://thang.edtexco.com/images/${temp?.data?.name}`);
     } else {
       onError();
@@ -159,7 +167,7 @@ const Product = () => {
       setIsModalOpen(false);
     },
     // eslint-disable-next-line
-    [initialValues, dispatch]
+    [initialValues, dispatch, imageUrl]
   );
   const handleCancel = () => {
     setIsModalOpen(false);
@@ -173,10 +181,11 @@ const Product = () => {
         type: "UPDATE_PRODUCT",
         payload: { ...values, image_url: imageUrl },
       });
+      setFileList([]);
+      setImageUrl("");
       setisModalOpenUpdate(false);
     },
-    // eslint-disable-next-line
-    [initialValuesUpdate, dispatch]
+    [initialValuesUpdate, dispatch, imageUrl]
   );
 
   const columns = [
@@ -497,7 +506,6 @@ const Product = () => {
                           customRequest={customRequest}
                           listType={"picture"}
                         >
-                          {console.log(fileList)}
                           {fileList?.length === 0 && (
                             <div className="tw-flex tw-items-center">
                               <UploadOutlined />
