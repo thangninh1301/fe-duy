@@ -38,12 +38,17 @@ const ProductUser = () => {
     brand: searchParams.get("brand") || "",
     country: searchParams.get("country")?.split(",") || [],
     type: searchParams.get("type")?.split(",") || [],
-    price_high: searchParams.get("price_high")?.split(",") || [],
+    price: searchParams.get("price")?.split(",") || [],
   };
 
   const handleCancel = () => {
     setOpenModalFilter(false);
   };
+
+   const findValue = (item) => {
+    return PRICE_LIST.find(i=>i?.value==item)?.label ||"";
+   };
+
   const removeNullObjects = (obj) => {
     return Object.entries(obj).reduce(
       (a, [k, v]) => (v === null || v === "" ? a : ((a[k] = v), a)),
@@ -59,7 +64,7 @@ const ProductUser = () => {
           size: values?.size.join(","),
           country: values?.country.join(","),
           type: values?.type.join(","),
-          price_high: values?.price_high.join(","),
+          price: values?.price.join(","),
         })
       ).toString();
       navigate(`/product?${queryString}`, { replace: true });
@@ -77,7 +82,7 @@ const ProductUser = () => {
           size: null,
           country: null,
           type: null,
-          price_high: null,
+          price: null,
         })
       ).toString();
       navigate(`/product?${queryString}`, { replace: true });
@@ -114,7 +119,7 @@ const ProductUser = () => {
             </div>
             <div className="tw-flex tw-items-center tw-justify-end"></div>
           </div>
-          <div className="tw-flex tw-items-center tw-mb-6 tw-cursor-pointer">
+          <div className="tw-flex tw-items-center tw-mb-6 tw-cursor-pointer tw-flex-wrap">
             <div className="tw-text-white">Lọc sản phẩm theo :</div>
             {!!initialValues?.brand && (
               <div
@@ -154,6 +159,16 @@ const ProductUser = () => {
               >
                 <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
                   Đất nước: {initialValues?.country}
+                </div>
+              </div>
+            )}
+            {!!initialValues?.price?.length > 0 && (
+              <div
+                onClick={() => setOpenModalFilter(true)}
+                className="tw-flex tw-items-center tw-ml-3"
+              >
+                <div className="tw-text-white tw-bg-[#DC1914] tw-py-[6px] tw-px-4 tw-rounded-[16px] ">
+                  Giá tiền: {findValue(initialValues?.price)}
                 </div>
               </div>
             )}
@@ -249,26 +264,26 @@ const ProductUser = () => {
                         Hãng
                       </span>
                     </div>
-                      <Checkbox.Group
-                          style={{ width: "100%" }}
-                          onChange={(e) => setFieldValue("brand", e)}
-                      >
-                          <Space className="tw-px-3 tw-w-full" direction="vertical">
-                              {BRANCH_LIST.map((i) => {
-                                  return (
-                                      <div
-                                          key={i.value}
-                                          className="tw-flex tw-w-full tw-justify-between"
-                                      >
-                                          <div className="tw-text-[#ffffffcc]">
-                                              {i.label}
-                                          </div>
-                                          <Checkbox name="type" value={i.value}></Checkbox>
-                                      </div>
-                                  );
-                              })}
-                          </Space>
-                      </Checkbox.Group>
+                    <Checkbox.Group
+                      style={{ width: "100%" }}
+                      onChange={(e) => setFieldValue("brand", e)}
+                    >
+                      <Space className="tw-px-3 tw-w-full" direction="vertical">
+                        {BRANCH_LIST.map((i) => {
+                          return (
+                            <div
+                              key={i.value}
+                              className="tw-flex tw-w-full tw-justify-between"
+                            >
+                              <div className="tw-text-[#ffffffcc]">
+                                {i.label}
+                              </div>
+                              <Checkbox name="type" value={i.value}></Checkbox>
+                            </div>
+                          );
+                        })}
+                      </Space>
+                    </Checkbox.Group>
                     {/*<Radio.Group*/}
                     {/*  className="tw-block"*/}
                     {/*  name="brand"*/}
@@ -411,7 +426,7 @@ const ProductUser = () => {
 
                     <Checkbox.Group
                       style={{ width: "100%" }}
-                      onChange={(e) => setFieldValue("price_high", e)}
+                      onChange={(e) => setFieldValue("price", e)}
                     >
                       <Space className="tw-px-3 tw-w-full" direction="vertical">
                         {PRICE_LIST.map((i) => {
@@ -423,10 +438,7 @@ const ProductUser = () => {
                               <div className="tw-text-[#ffffffcc]">
                                 {i.label}
                               </div>
-                              <Checkbox
-                                name="price_high"
-                                value={i.value}
-                              ></Checkbox>
+                              <Checkbox name="price" value={i.value}></Checkbox>
                             </div>
                           );
                         })}

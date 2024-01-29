@@ -62,7 +62,7 @@ export const router = [
   {
     path: "/product/:id",
     element: <ProductDetail />,
-    permissions: true,
+    permissions: false,
     exact: true,
   },
   {
